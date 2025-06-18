@@ -12,26 +12,26 @@ const Marque = () => {
 <div className="space-y-4">
   <Marquee pauseOnHover={true} autoFill={true} speed={30}>
     <div className="flex gap-10 items-center">
-      <span className="flex items-center gap-2"><FaHtml5 /> HTML</span>
-      <span className="flex items-center gap-2"><FaJs /> JavaScript</span>
-      <span className="flex items-center gap-2"><FaCss3Alt /> CSS</span>
-      <span className="flex items-center gap-2"><FaReact /> React</span>
-      <span className="flex items-center gap-2"><FaGitAlt /> Git</span>
-      <span className="flex items-center gap-2"><SiTailwindcss /> Tailwind CSS</span>
+      <span className="flex items-center gap-2"><FaHtml5 className='text-orange-600' /> HTML</span>
+      <span className="flex items-center gap-2"><FaJs className='text-yellow-400'/> JavaScript</span>
+      <span className="flex items-center gap-2"><FaCss3Alt className='text-blue-600' /> CSS</span>
+      <span className="flex items-center gap-2"><FaReact className='text-cyan-400'/> React</span>
+      <span className="flex items-center gap-2"><FaGitAlt className='text-orange-400' /> Git</span>
+      <span className="flex items-center gap-2"><SiTailwindcss className='text-sky-400'/> Tailwind CSS</span>
       <span className="flex items-center gap-2"><FaGithub /> GitHub</span>
     </div>
   </Marquee>
 
-  <Marquee pauseOnHover={true} autoFill={true} speed={20}>
+  <Marquee pauseOnHover={true} autoFill={true} speed={30} direction='right'>
     <div className="flex gap-10 items-center">
-      <span className="flex items-center gap-2"><FaGithub /> GitHub</span>
-      <span className="flex items-center gap-2"><SiTailwindcss /> Tailwind CSS</span>
-      <span className="flex items-center gap-2"><FaGitAlt /> Git</span>
-      <span className="flex items-center gap-2"><FaReact /> React</span>
-      <span className="flex items-center gap-2"><FaCss3Alt /> CSS</span>
-      <span className="flex items-center gap-2"><FaJs /> JavaScript</span>
-      <span className="flex items-center gap-2 mr-2"><FaHtml5 /> HTML</span>
-    </div>
+      <span className="flex items-center gap-2"><FaGithub  /> GitHub</span>
+      <span className="flex items-center gap-2"><SiTailwindcss className='text-sky-400'/> Tailwind CSS</span>
+      <span className="flex items-center gap-2"><FaGitAlt className='text-orange-400'/> Git</span>
+      <span className="flex items-center gap-2"><FaReact className='text-cyan-400'/> React</span>
+      <span className="flex items-center gap-2"><FaCss3Alt className='text-blue-600' /> CSS</span>
+      <span className="flex items-center gap-2"><FaJs className='text-yellow-400' /> JavaScript</span>
+      <span className="flex items-center gap-2 mr-2"><FaHtml5 className='text-orange-600'/> HTML</span>
+    </div>  
   </Marquee>
 </div>
 

@@ -1,40 +1,40 @@
 import React from 'react';
-
+import Myimage from '../assets/image.png'
+import { FaReact } from 'react-icons/fa';
+import { SiTailwindcss } from 'react-icons/si';
 const Projects = () => {
   return (
     
-    <div className="text-white font-roboto-mono px-4 flex flex-col items-center mt-20">
-      <div className="w-full max-w-2xl  rounded-md p-6">
-        <h1 className="text-2xl font-semibold text-center mb-6">Projects</h1>
+    <div className='text-white relative space-y-5   font-roboto-mono m-auto w-full max-w-4xl rounded-xl p-8 sm:p-4'>
+  <h1 className='text-2xl sm:text-3xl font-bold text-center sm:text-left'>Projects</h1>
 
-        <div className="grid gap-6 sm:grid-cols-1">
-          
-          <div className=" rounded-lg  border border-gray-600 p-4 h-90 hover:shadow-lg transition">
-            <div className='justify-bottom'>
-            <h2 className="text-xl font-semibold mb-2">Portfolio Website</h2>
-            <p className="text-gray-400 mb-3">
-              A responsive personal portfolio website built using React, Tailwind CSS, and React Router.
-            </p>
-            <a href="https://yourprojectlink.com" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-400 hover:underline">
-              View Project
-            </a>
-            </div>
-          </div>
+  <div className='relative w-full  h-80 border rounded-xl overflow-hidden'>
 
-          <div className="border border-gray-500 rounded-lg p-4 hover:shadow-lg transition">
-            <h2 className="text-xl font-semibold mb-2">Hospital Management System</h2>
-            <p className="text-gray-400 mb-3">
-              A full-stack hospital management app with bed allocation, OPD queuing, and inventory control using PHP and MySQL.
-            </p>
-            <a href="https://yourprojectlink.com" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-400 hover:underline">
-              View Project
-            </a>
-          </div>
+    <div
+      className="absolute inset-0 z-0 bg-cover bg-center"
+      style={{
+        backgroundImage: `url(${Myimage})`,
+      }}
+    />
 
+    <div className="absolute inset-0 bg-black/60 z-10 transition-all duration-300 hover:bg-black/40" />
 
+    <div className='relative z-20 p-8 flex flex-col justify-end h-full'>
+      <div className='md:flex sm:flex space-x-3 mb-3'>
+        <div className='flex space-x-2 bg-slate-800 rounded p-2 hover:bg-slate-700 transition'>
+          <FaReact className='text-2xl' /><h1>React</h1>
+        </div>
+        <div className='flex space-x-2 bg-slate-800 rounded p-2 hover:bg-slate-700 transition'>
+          <SiTailwindcss className='text-2xl' /><h1>Tailwindcss</h1>
         </div>
       </div>
+      <h1 className='text-lg font-semibold'>BackdropUi</h1>
+      <p className='text-sm text-gray-300'>Go-to place to find background gradients</p>
     </div>
+
+  </div>
+ 
+</div>
   );
 };
 

@@ -1,17 +1,31 @@
 import React from 'react';
 import { FaLinkedin, FaGithub, FaReact } from 'react-icons/fa';
 import { FaXTwitter } from "react-icons/fa6";
-
+import Experience from './Experience';
 import { IoPinOutline } from 'react-icons/io5';
 import { SiTailwindcss } from 'react-icons/si';
 import Typewriter from 'typewriter-effect';
 import Marque from './Marque';
-import Myimage from '../assets/image.png'
+import Projects from './Projects';
+import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
+import Contact from './Contact';
+import Navbar from './Navbar';
+import { useState } from 'react';
+import GitHubCalendar from 'react-github-calendar';
 
 const Connector = () => {
-  return (
-    <div className="px-4 sm:px-6 lg:px-8">
+  const location = useLocation();
+  const [exp, setExp] = useState(location.pathname);
+  const handlebtn = (path) => {
+    setExp(path);
+  };
 
+
+  return (<><div className="overflow-x-hidden">
+    {/* your entire app */}
+
+    <Navbar />
+    <div className="px-4 sm:px-6 lg:px-8">
       <div className='text-white flex relative top-20 justify-center font-roboto-mono m-auto border border-gray-600 rounded-xl p-8 sm:p-10 w-full max-w-4xl shadow-lg backdrop-blur-md'>
         <div className='flex flex-col sm:flex-row justify-between w-full'>
 
@@ -31,8 +45,9 @@ const Connector = () => {
               Location
             </p>
             <p className='mt-3 text-base max-w-md'>
-              Description goes here..
+              Hello, I'm a web developer who loves technologies and trying learn what i like.
             </p>
+            <button className='sm:mt-5  p-1 relative top-2 sm:top-0 sm:p-3 cursor-pointer bg-white tex-black rounded-xl text-black'>Resume</button>
           </div>
 
           <div className='flex space-x-6 items-start mt-6 sm:mt-0'>
@@ -42,109 +57,65 @@ const Connector = () => {
             <a href="https://github.com/sivakumar232" target="_blank" rel="noopener noreferrer">
               <FaGithub className='text-2xl sm:text-3xl hover:text-slate-400 transition duration-300' />
             </a>
-                        <a href="https://github.com/sivakumar232" target="_blank" rel="noopener noreferrer">
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
               <FaXTwitter className='text-2xl sm:text-3xl hover:text-slate-400 transition duration-300' />
             </a>
           </div>
 
         </div>
       </div>
+      <div className="text-white relative top-20 font-roboto-mono mx-auto w-full max-w-4xl rounded-xl p-8 sm:p-10 overflow-hidden">
+        <h1 className="text-2xl sm:text-3xl font-bold text-center sm:text-left">
+          What I work with
+        </h1>
 
-      <div className='text-white relative top-24 font-roboto-mono m-auto w-full max-w-4xl rounded-xl p-8 sm:p-10'>
-        <h1 className='text-2xl sm:text-3xl font-bold text-center sm:text-left'>What I work with</h1>
-        <div className='relative mt-5'>
+        <div className="relative mt-5">
           <Marque />
         </div>
-      </div>
 
-      <div className="text-white relative top-28 font-roboto-mono m-auto w-full max-w-4xl rounded-xl p-8 sm:p-10">
-        <h1 className="text-2xl sm:text-3xl sm:text-left font-bold text-center mb-10">Experience</h1>
-
-        <ol className="relative border-s border-gray-500">
-          <li className="mb-12 ms-6">
-            <div className="absolute w-4 h-4 bg-gray-300 rounded-full mt-1.5 -start-2 border-2 border-white dark:border-gray-900 dark:bg-gray-700"></div>
-            <time className="block mb-2 text-sm text-gray-400">February 2022</time>
-            <h3 className="text-xl font-semibold text-white">Experience 1</h3>
-            <p className="mt-2 text-base text-gray-400">
-              Description of Experience 1. Highlight key contributions, technologies used, or impact.
-            </p>
-          </li>
-
-          <li className="mb-12 ms-6">
-            <div className="absolute w-4 h-4 bg-gray-300 rounded-full mt-1.5 -start-2 border-2 border-white dark:border-gray-900 dark:bg-gray-700"></div>
-            <time className="block mb-2 text-sm text-gray-400">March 2022</time>
-            <h3 className="text-xl font-semibold text-white">Experience 2</h3>
-            <p className="mt-2 text-base text-gray-400">
-              Description of Experience 2. Focus on learnings, growth, or specific achievements.
-            </p>
-          </li>
-
-          <li className="ms-6">
-            <div className="absolute w-4 h-4 bg-gray-300 rounded-full mt-1.5 -start-2 border-2 border-white dark:border-gray-900 dark:bg-gray-700"></div>
-            <time className="block mb-2 text-sm text-gray-400">April 2022</time>
-            <h3 className="text-xl font-semibold text-white">Experience 3</h3>
-            <p className="mt-2 text-base text-gray-400">
-              Description of Experience 3. Summary of your responsibilities or technical skills practiced.
-            </p>
-          </li>
-        </ol>
-      </div>
-
-      <div className='text-white relative space-y-5 top-28 font-roboto-mono m-auto w-full max-w-4xl rounded-xl p-8 sm:p-10'>
-  <h1 className='text-2xl sm:text-3xl font-bold text-center sm:text-left'>Projects</h1>
-
-  <div className='relative w-full h-120 border rounded-xl overflow-hidden'>
-
-    <div
-      className="absolute inset-0 z-0 bg-cover bg-center"
-      style={{
-        backgroundImage: `url(${Myimage})`,
-      }}
-    />
-
-    <div className="absolute inset-0 bg-black/60 z-10 transition-all duration-300 hover:bg-black/40" />
-
-    <div className='relative z-20 p-8 flex flex-col justify-end h-full'>
-      <div className='flex space-x-3 mb-3'>
-        <div className='flex space-x-2 bg-slate-800 rounded p-2 hover:bg-slate-700 transition'>
-          <FaReact className='text-2xl' /><h1>React</h1>
-        </div>
-        <div className='flex space-x-2 bg-slate-800 rounded p-2 hover:bg-slate-700 transition'>
-          <SiTailwindcss className='text-2xl' /><h1>Tailwindcss</h1>
+        <div className="mt-10 w-full overflow-hidden">
+          <div className="max-w-full">
+            <GitHubCalendar
+              username="sivakumar232"
+              blockSize={14}
+              blockMargin={4}
+              fontSize={16}
+              weeks={24}
+              colorScheme='dark'
+              style={{overflow:'hidden'}}
+            />
+          </div>
         </div>
       </div>
-      <h1 className='text-lg font-semibold'>Awesome Project Title</h1>
-      <p className='text-sm text-gray-300'>Project description. Highlight the purpose or what it does.</p>
+      <div className="text-white relative top-12 space-y-5 font-roboto-mono m-auto w-full max-w-4xl rounded-xl p-8 sm:p-10">
+        <div className='flex space-x-5 bg-transparent justify-center m-auto p-4 rounded-xl'>
+          <Link to="/projects">
+            <h1 className={`border p-3 rounded-xl cursor-pointer w-full ${location.pathname === '/projects' ? 'bg-white text-black' : ''
+              }`} onClick={() => handlebtn("/projects")}>Projects</h1>
+          </Link>
+
+          <Link to="/">
+            <h1 className={`border p-3 rounded-xl cursor-pointer w-full ${location.pathname === '/' ? 'bg-white text-black' : ''
+              }`} onClick={() => handlebtn("/")}>Experience</h1>
+          </Link>
+
+        </div>
+
+        <Routes>
+          <Route path="/" element={<Experience />} />
+          <Route path="/projects" element={<Projects />} />
+        </Routes>
+      </div>
+      <div className='text-white relative space-y-5 font-roboto-mono m-auto w-full max-w-4xl rounded-xl p-8 sm:p-10'>
+        <h1 className="text-2xl font-semibold text-left">Contact Me</h1>
+
+        <Contact />
+      </div>
+
     </div>
-
   </div>
-  <div className='relative w-full h-120 border rounded-xl overflow-hidden'>
+  </>
 
-    <div
-      className="absolute inset-0 z-0 bg-cover bg-center"
-      style={{
-        backgroundImage: `url(${Myimage})`,
-      }}
-    />
-
-    <div className="absolute inset-0 bg-black/60 z-10 transition-all duration-300 hover:bg-black/40" />
-
-    <div className='relative z-20 p-8 flex flex-col justify-end h-full'>
-      <div className='flex space-x-3 mb-3'>
-        <div className='flex space-x-2 bg-slate-800 rounded p-2 hover:bg-slate-700 transition'>
-          <FaReact className='text-2xl' /><h1>React</h1>
-        </div>
-        <div className='flex space-x-2 bg-slate-800 rounded p-2 hover:bg-slate-700 transition'>
-          <SiTailwindcss className='text-2xl' /><h1>Tailwindcss</h1>
-        </div>
-      </div>
-      <h1 className='text-lg font-semibold'>Awesome Project Title</h1>
-      <p className='text-sm text-gray-300'>Project description. Highlight the purpose or what it does.</p>
-    </div>
-
-  </div>
-</div>
-    </div>
   );
 };
 
