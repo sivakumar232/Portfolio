@@ -20,7 +20,6 @@ const Connector = () => {
     setExp(path);
   };
 
-
   return (<><div className="overflow-x-hidden">
     {/* your entire app */}
 
@@ -73,17 +72,22 @@ const Connector = () => {
           <Marque />
         </div>
 
-        <div className="mt-10 w-full overflow-hidden">
-          <div className="max-w-full">
-            <GitHubCalendar
-              username="sivakumar232"
-              blockSize={14}
-              blockMargin={4}
-              fontSize={16}
-              weeks={24}
-              colorScheme='dark'
-              style={{overflow:'hidden'}}
-            />
+        <div className="mt-10 w-full">
+          <div className="w-full overflow-hidden">
+            <div className="flex justify-center sm:justify-start">
+              <GitHubCalendar
+                username="sivakumar232"
+                blockSize={12}
+                blockMargin={3}
+                fontSize={14}
+                weeks={20}
+                colorScheme='dark'
+                style={{
+                  maxWidth: '100%',
+                  fontSize: '13px'
+                }}
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -21,6 +21,8 @@
     "vite": "^6.3.5"
   },
   "dependencies": {
+    "emailjs-com": "^3.2.0",
+    "nodemailer": "^7.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-fast-marquee": "^1.6.5",
