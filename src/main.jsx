@@ -8,7 +8,6 @@ import About from './components/About.jsx';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <App />
-    <div className="fixed inset-0 z-[-2] w-full h-full bg-black"></div>
 
   </React.StrictMode>
 );

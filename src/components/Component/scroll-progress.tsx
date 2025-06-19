@@ -3,6 +3,7 @@
 import { motion, SpringOptions, useScroll, useSpring } from 'motion/react';
 import { cn } from '@/lib/utils';
 import { RefObject } from 'react';
+import React from 'react';
 
 export type ScrollProgressProps = {
   className?: string;
@@ -23,20 +24,21 @@ export function ScrollProgress({
 }: ScrollProgressProps) {
   const { scrollYProgress } = useScroll({
     container: containerRef,
-    layoutEffect: Boolean(containerRef?.current),
+    layoutEffect: false,
   });
 
-  const scaleX = useSpring(scrollYProgress, {
+  const scaleY = useSpring(scrollYProgress, {
     ...DEFAULT_SPRING_OPTIONS,
     ...(springOptions ?? {}),
   });
 
   return (
     <motion.div
-      className={cn('inset-x-0 top-0 h-1 origin-left', className)}
-      style={{
-        scaleX,
-      }}
+      className={cn(
+        'fixed left-0 top-0 h-full w-1 bg-white origin-top z-50',
+        className
+      )}
+      style={{ scaleY }}
     />
   );
 }

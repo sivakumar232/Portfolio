@@ -12,7 +12,7 @@ const Contact = () => {
           <input
             type="text"
             placeholder="Name"
-            className="w-full h-10 px-3 border rounded-md bg-transparent border-gray-600 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full backdrop-blur-3xl h-10 px-3 border rounded-md bg-transparent border-gray-600 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
 
           <input
