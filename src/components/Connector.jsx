@@ -21,9 +21,9 @@ const Connector = () => {
   };
 
   return (<><div className="overflow-x-hidden">
-    {/* your entire app */}
 
     <Navbar />
+  
     <div className="px-4 sm:px-6 lg:px-8">
       <div className='text-white flex relative top-20 justify-center font-roboto-mono m-auto border border-gray-600 rounded-xl p-8 sm:p-10 w-full max-w-4xl shadow-lg backdrop-blur-md'>
         <div className='flex flex-col sm:flex-row justify-between w-full'>
@@ -84,31 +84,16 @@ const Connector = () => {
                 colorScheme='dark'
                 style={{
                   maxWidth: '100%',
-                  fontSize: '13px'
+                  fontSize: '13px',
                 }}
               />
             </div>
           </div>
         </div>
       </div>
-      <div className="text-white relative top-12 space-y-5 font-roboto-mono m-auto w-full max-w-4xl rounded-xl p-8 sm:p-10">
-        <div className='flex space-x-5 bg-transparent justify-center m-auto p-4 rounded-xl'>
-          <Link to="/projects">
-            <h1 className={`border p-3 rounded-xl cursor-pointer w-full ${location.pathname === '/projects' ? 'bg-white text-black' : ''
-              }`} onClick={() => handlebtn("/projects")}>Projects</h1>
-          </Link>
-
-          <Link to="/">
-            <h1 className={`border p-3 rounded-xl cursor-pointer w-full ${location.pathname === '/' ? 'bg-white text-black' : ''
-              }`} onClick={() => handlebtn("/")}>Experience</h1>
-          </Link>
-
-        </div>
-
-        <Routes>
-          <Route path="/" element={<Experience />} />
-          <Route path="/projects" element={<Projects />} />
-        </Routes>
+      <div className="text-white relative top-12  font-roboto-mono m-auto w-full max-w-4xl rounded-xl p-8 sm:p-8">
+        <Experience/>
+        <Projects/>
       </div>
       <div className='text-white relative space-y-5 font-roboto-mono m-auto w-full max-w-4xl rounded-xl p-8 sm:p-10'>
         <h1 className="text-2xl font-semibold text-left">Contact Me</h1>
