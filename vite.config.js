@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [tailwindcss()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src'), // point `@` to your /src folder
+      '@': path.resolve(__dirname, './src'), // point `@` to your /src folder
     },
   },
 });

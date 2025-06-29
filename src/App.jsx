@@ -8,9 +8,7 @@ import Contact from "./components/Contact";
 const App = () => {
   return (
     <BrowserRouter>
-    <div className="bg-black min-h-screen text-white">
     <Connector/>
-    </div>
     </BrowserRouter>
   );
 };

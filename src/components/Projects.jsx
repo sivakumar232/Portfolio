@@ -7,13 +7,11 @@ import { Tilt } from "@/components/ui/Tilt";
 
 const Projects = () => {
   return (
-    <div className="relative w-full text-white font-roboto-mono px-4 sm:px-6 lg:px-8 pt-12">
+    <div className="sm:p-4 relative sm:right-2 cursor-pointer">
 
-      {/* Radial Background */}
-      <div className="fixed top-0 left-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] pointer-events-none"></div>
 
-      <h1 className="text-xl sm:text-xl lg:text-3xl font-bold text-center sm:text-left mb-8">
-        Projects
+      <h1 className="text-xl sm:text-xl lg:text-3xl font-orbitron font-bold text-center  mb-8">
+        Proof of work
       </h1>
 
       <div className="flex flex-col sm:flex-row gap-6">
@@ -38,22 +36,23 @@ const Projects = () => {
             </div>
 
             <div className="flex gap-2">
-              <div className="flex items-center gap-1 bg-slate-600 text-white rounded px-2 py-1 text-xs">
+              <div className="flex items-center gap-1 bg-white text-black rounded px-2 py-1 text-xs">
                 <FaReact className="text-cyan-500" />
                 React
               </div>
-              <div className="flex items-center gap-1 bg-slate-600 text-white rounded px-2 py-1 text-xs">
-                <SiTailwindcss />
+              <div className="flex items-center gap-1 bg-white text-black rounded px-2 py-1 text-xs">
+                <SiTailwindcss className="text-cyan-600" />
                 Tailwind CSS
               </div>
             </div>
           </div>
         </Tilt>
         <Tilt className="w-full sm:w-1/2">
-          <div className="border border-gray-600 rounded-xl flex items-center justify-center p-6 text-center h-full min-h-[200px]">
-          <p className="text-gray-200 text-sm sm:text-base">🚧 Coming Soon...</p>
-        </div>
+          <div className="border border-gray-600 rounded-xl flex items-center justify-center p-6 text-center h-full min-h-[200px] backdrop-blur-md bg-black/50">
+            <p className="text-gray-200 text-sm sm:text-base">🚧 Coming Soon...</p>
+          </div>
         </Tilt>
+
       </div>
     </div>
   );
