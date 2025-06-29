@@ -90,7 +90,7 @@ import { Dock } from '@/components/dock';const Connector = () => {
           </div>
           <div className="text-white mt-5 font-roboto-mono mx-auto w-full max-w-4xl border border-gray-600 rounded-xl p-8 sm:p-10 bg-black/60 backdrop-blur-md">
             <h1 className="text-2xl sm:text-3xl font-orbitron font-bold text-center ">
-              Github 
+              Github Activity
             </h1>
             <div className="mt-10 w-full">
               <div className="w-full overflow-hidden">
