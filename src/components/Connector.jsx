@@ -12,17 +12,27 @@ import { BsGithub } from 'react-icons/bs';
 import { FaLink } from 'react-icons/fa6';
 import { Tilt } from "@/components/ui/Tilt";
 import { SiLeetcode } from 'react-icons/si';
+import { useState, useEffect } from 'react';
 // No import changes — same as your original code.
 
 const Connector = () => {
+  const [time, setTime] = useState(new Date());
+  useEffect(() => {
+    const timerId = setInterval(() => setTime(new Date()), 1000);
+    return () => clearInterval(timerId);
+  }, []);
+
+  const hours = time.getHours();
+  const minutes = time.getMinutes();
   const location = useLocation();
+  const ampm=time.getHours>=12?'PM':'AM';
 
   return (
     <div className="overflow-x-hidden bg-neutral-900 bg-no-repeat bg-center bg-fixed min-h-screen">
       <div className="px-4 mt-5 space-y-6">
 
         {/* Profile Section */}
-        <div className="text-white flex flex-col items-center sm:flex-row sm:items-start font-roboto-mono m-auto rounded-xl p-6 w-full max-w-4xl shadow-lg space-y-4 sm:space-y-0 sm:space-x-6">
+        <div className="text-white  flex flex-col items-center sm:flex-row sm:items-start font-roboto-mono m-auto rounded-xl p-6 w-full max-w-4xl shadow-lg space-y-4 sm:space-y-0 sm:space-x-6">
           <img
             src="src/assets/mob.jpg"
             alt="Profile"
@@ -46,19 +56,25 @@ const Connector = () => {
               </a>
             </div>
           </div>
+          <div className='border flex relative space-x-1 top-2 rounded-md p-1 border-green-400 text-monospace'>
+            <span className='blink_me relative top-1.5'></span><p className='text-xs text-green-400'>Available</p>
+          </div>
+          <div className='text-neutral-400 fixed top-5 right-2'>
+            <p>{`${hours<12?hours<10?'0'+hours:''+hours:hours-12}:${minutes<10?'0'+minutes:''+minutes} ${ampm}`}</p>
+          </div>
         </div>
 
         {/* About Section */}
         <div className="text-neutral-200 flex flex-col font-roboto-mono m-auto rounded-xl p-6 w-full max-w-4xl shadow-lg space-y-2">
           <h1 className="text-xl font-lato font-semibold text-center sm:text-left">About Me.</h1>
-          <p className="text-md text-neutral-300 text-center sm:text-left">
+          <p className="text-s text-neutral-300 text-center sm:text-left">
             Hey! I'm Sivakumar, an undergraduate computer science student and full stack developer who loves turning ideas into reality.
           </p>
-          <p className="text-md text-neutral-300 text-center sm:text-left">
+          <p className="text-s text-neutral-300 text-center sm:text-left">
             I primarily work with React, Node.js, Express, MongoDB, and PostgreSQL, but I’m flexible and quick to adapt to other technologies and stacks as needed.
           </p>
           <h1 className="text-xl font-lato font-semibold text-center sm:text-left">Hire Me.</h1>
-          <p className="text-md text-neutral-300 text-center sm:text-left">
+          <p className="text-s text-neutral-300 text-center sm:text-left">
             I’m currently available for internships and freelance work—ready to jump in and bring my skills to your team.
           </p>
         </div>

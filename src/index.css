@@ -159,6 +159,21 @@
   --font-ubuntu: Ubuntu, "sans-serif";
   --font-orbitron:Orbitron,"monospace";
 }
-body{
-  cursor: url('./assets/NORMAL.cur'),auto;
+.blink_me {
+  animation: blinker 2s linear infinite;
+  width: 5px;
+  height: 5px;
+  display: inline-block;
+  border: 1px solid rgb(18, 225, 18);
+  background-color: rgb(18, 225, 18);
+  border-radius: 100%;
+}
+@keyframes blinker {
+  50% {
+    opacity: 0.6;
+  }
+}
+::selection{
+  color: black  ;
+  background-color: white;
 }
