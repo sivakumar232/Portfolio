@@ -4,7 +4,7 @@ const Experience = () => {
   return (
     <div className='sm:p-4 relative sm:right-2 cursor-pointer'>
       <div>
-        <h1 className='text-2xl sm:text-3xl font-bold text-center font-orbitron mb-4 '>Experience</h1>
+        <h1 className='text-2xl sm:text-xl  text-center sm:text-left font=lato mb-4 '>Experience</h1>
         <ol className=" relative border-s border-white ">
           <li className="mb-12 ms-6">
             <time className="block mb-2 text-sm text-gray-400">june 2025</time>
@@ -13,8 +13,8 @@ const Experience = () => {
               Made some personal projects in part of my learning curve
             </p>
           </li>
-</ol>
-<ol className='relative border-s border-white'>
+        </ol>
+        <ol className='relative border-s border-white'>
           <li className="mb-12 ms-6">
             <time className="block mb-2 text-sm text-gray-400">March 2025 - Present</time>
             <h3 className="text-xl font-semibold text-white">Open Source</h3>

@@ -24,7 +24,7 @@ export function Tilt({
   children,
   className,
   style,
-  rotationFactor = 15,
+  rotationFactor = 4  ,
   isRevese = false,
   springOptions,
 }: TiltProps) {

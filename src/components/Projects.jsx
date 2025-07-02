@@ -7,10 +7,8 @@ import { Tilt } from "@/components/ui/Tilt";
 
 const Projects = () => {
   return (
-    <div className="sm:p-4 relative sm:right-2 cursor-pointer">
-
-
-      <h1 className="text-xl sm:text-xl lg:text-3xl font-orbitron font-bold text-center  mb-8">
+    <div className="sm:p-4 relative cursor-pointer">
+      <h1 className="text-xl sm:text-xl  font-lato text-neutral-200 font-semibold sm:text-left text-center  mb-8">
         Proof of work
       </h1>
 
