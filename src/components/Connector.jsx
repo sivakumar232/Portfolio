@@ -13,7 +13,7 @@ import { FaLink } from 'react-icons/fa6';
 import { Tilt } from "@/components/ui/Tilt";
 import { SiLeetcode } from 'react-icons/si';
 import { useState, useEffect } from 'react';
-// No import changes — same as your original code.
+
 
 const Connector = () => {
   const [time, setTime] = useState(new Date());
@@ -25,18 +25,18 @@ const Connector = () => {
   const hours = time.getHours();
   const minutes = time.getMinutes();
   const location = useLocation();
-  const ampm=time.getHours>=12?'PM':'AM';
+  const ampm = time.getHours >= 12 ? 'AM' : 'PM';
 
   return (
     <div className="overflow-x-hidden bg-neutral-900 bg-no-repeat bg-center bg-fixed min-h-screen">
-      <div className="px-4 mt-5 space-y-6">
 
+      <div className="px-4 mt-5 space-y-6">
         {/* Profile Section */}
-        <div className="text-white  flex flex-col items-center sm:flex-row sm:items-start font-roboto-mono m-auto rounded-xl p-6 w-full max-w-4xl shadow-lg space-y-4 sm:space-y-0 sm:space-x-6">
+        <div className="text-white  flex flex-col items-center sm:flex-row sm:items-start font-roboto-mono m-auto rounded-xl p-6 w-full max-w-4xl   space-y-4 sm:space-y-0 sm:space-x-6">
           <img
             src="src/assets/mob.jpg"
             alt="Profile"
-            className="w-24 h-24 object-cover rounded-xl shadow-md"
+            className="w-28 h-28 object-cover rounded-xl shadow-lg"
           />
           <div className="text-center sm:text-left">
             <h1 className="text-3xl sm:text-4xl font-semibold font-montserrat">Siva Kumar</h1>
@@ -60,28 +60,28 @@ const Connector = () => {
             <span className='blink_me relative top-1.5'></span><p className='text-xs text-green-400'>Available</p>
           </div>
           <div className='text-neutral-400 fixed top-5 right-2'>
-            <p>{`${hours<12?hours<10?'0'+hours:''+hours:hours-12}:${minutes<10?'0'+minutes:''+minutes} ${ampm}`}</p>
+            <p>{`${hours % 12 === 0 ? 12 : String(hours % 12).padStart(2, '0')}:${String(minutes).padStart(2, '0')} ${ampm}`}</p>
           </div>
         </div>
 
         {/* About Section */}
-        <div className="text-neutral-200 flex flex-col font-roboto-mono m-auto rounded-xl p-6 w-full max-w-4xl shadow-lg space-y-2">
-          <h1 className="text-xl font-lato font-semibold text-center sm:text-left">About Me.</h1>
-          <p className="text-s text-neutral-300 text-center sm:text-left">
-            Hey! I'm Sivakumar, an undergraduate computer science student and full stack developer who loves turning ideas into reality.
+        <div className="text-neutral-200 flex flex-col font-roboto-mono m-auto rounded-xl p-6 w-full max-w-4xl  space-y-2">
+          <h1 className="text-2xl font-lato font-semibold text-left">About Me.</h1>
+          <p className="text-s text-slate-400 text-left">
+            Hey! I'm <span className='text-white'>Sivakumar</span>, an undergraduate computerscience student and <span className='text-white'>a fullstack developer</span> who loves turning ideas into reality.
           </p>
-          <p className="text-s text-neutral-300 text-center sm:text-left">
-            I primarily work with React, Node.js, Express, MongoDB, and PostgreSQL, but I’m flexible and quick to adapt to other technologies and stacks as needed.
+          <p className="text-s text-slate-400 text-left"><span className='text-white'></span>
+            I primarily work with <span className='text-white'>React</span>, <span className='text-white'>Node.js</span>, <span className='text-white'>Express</span>, <span className='text-white'>MomgoDb</span>, and <span className='text-white'>Tailwind</span>. I have experience with PostgreSQL, but I’m flexible and quick to adapt to other technologies and stacks as needed.
           </p>
-          <h1 className="text-xl font-lato font-semibold text-center sm:text-left">Hire Me.</h1>
-          <p className="text-s text-neutral-300 text-center sm:text-left">
-            I’m currently available for internships and freelance work—ready to jump in and bring my skills to your team.
+          <h1 className="text-2 xl font-lato font-semibold text-left">Hire Me.</h1>
+          <p className="text-s text-slate-400 text-left">
+            I’m currently <span className='text-white'>available</span> for <span className='text-white'>internships</span> and <span className='text-white'>freelance</span> work—ready to jump in and bring my skills to your team.
           </p>
         </div>
 
         {/* Skills Section */}
         <div className="text-neutral-200 w-full max-w-4xl mx-auto rounded-xl p-6">
-          <h1 className="text-xl font-lato font-semibold text-center sm:text-left">Skills & Tools</h1>
+          <h1 className="text-2xl font-lato font-semibold text-center sm:text-left">Skills & Tools</h1>
           <div className="mt-2">
             <Marque />
           </div>
@@ -89,7 +89,7 @@ const Connector = () => {
 
         {/* GitHub Activity */}
         <div className="text-neutral-200 font-roboto-mono w-full max-w-4xl mx-auto rounded-xl p-6">
-          <h1 className="text-xl font-lato font-semibold text-center sm:text-left">GitHub Activity</h1>
+          <h1 className="text-2xl font-lato font-semibold text-center sm:text-left">GitHub Activity</h1>
           <div className="mt-3 flex justify-center sm:justify-start">
             <GitHubCalendar
               username="sivakumar232"
@@ -105,7 +105,7 @@ const Connector = () => {
 
         {/* Projects Section */}
         <div className="text-white font-roboto-mono w-full max-w-4xl mx-auto rounded-xl p-6">
-          <h1 className="text-xl font-lato font-semibold text-center sm:text-left mb-3">Proof of Work</h1>
+          <h1 className="text-2xl font-lato font-semibold text-center sm:text-left mb-3">Proof of Work</h1>
           <div className="space-y-5">
             <Tilt className="w-full">
               <div className="border border-gray-600 rounded-xl flex flex-col justify-between p-6 h-full">

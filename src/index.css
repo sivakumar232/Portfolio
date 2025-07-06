@@ -177,3 +177,10 @@
   color: black  ;
   background-color: white;
 }
+
+canvas {
+  display: block !important;
+  position: fixed !important;
+  pointer-events: none;
+  z-index: 9999;
+}
