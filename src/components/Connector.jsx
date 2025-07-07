@@ -138,10 +138,10 @@ const Connector = () => {
 
                 {/* Tech Stack */}
                 <div className="flex flex-wrap gap-2">
-                  <div className="flex items-center gap-1 bg-neutral-800 text-white rounded px-2 py-1 text-xs">
+                  <div className="flex items-center cursor-pointer border border-gray-600  hover:border-sky-500 gap-1 bg-neutral-800 text-white rounded px-2 py-1 text-xs">
                     <FaReact className="text-cyan-500" /> React
                   </div>
-                  <div className="flex items-center gap-1 bg-neutral-800 text-white rounded px-2 py-1 text-xs">
+                  <div className="flex items-center cursor-pointer border border-gray-600  hover:border-sky-500 gap-1 bg-neutral-800 text-white rounded px-2 py-1 text-xs">
                     <SiTailwindcss className="text-cyan-600" /> Tailwind CSS
                   </div>
                 </div>
