@@ -73,7 +73,7 @@ const Connector = () => {
           <p className="text-s text-slate-400 text-left"><span className='text-white'></span>
             I primarily work with <span className='text-white'>React</span>, <span className='text-white'>Node.js</span>, <span className='text-white'>Express</span>, <span className='text-white'>MomgoDb</span>, and <span className='text-white'>Tailwind</span>. I have experience with PostgreSQL, but I’m flexible and quick to adapt to other technologies and stacks as needed.
           </p>
-          <h1 className="text-2 xl font-lato font-semibold text-left">Hire Me.</h1>
+          <h1 className="text-2xl font-lato font-semibold text-left">Hire Me.</h1>
           <p className="text-s text-slate-400 text-left">
             I’m currently <span className='text-white'>available</span> for <span className='text-white'>internships</span> and <span className='text-white'>freelance</span> work—ready to jump in and bring my skills to your team.
           </p>
@@ -88,7 +88,7 @@ const Connector = () => {
         </div>
 
         {/* GitHub Activity */}
-        <div className="text-neutral-200 font-roboto-mono w-full max-w-4xl mx-auto rounded-xl p-6">
+        <div className="text-neutral-200 font-roboto-mono w-full max-w-4xl mx-auto rounded-xl p-6 ">
           <h1 className="text-2xl font-lato font-semibold text-center sm:text-left">GitHub Activity</h1>
           <div className="mt-3 flex justify-center sm:justify-start">
             <GitHubCalendar
@@ -105,10 +105,20 @@ const Connector = () => {
 
         {/* Projects Section */}
         <div className="text-white font-roboto-mono w-full max-w-4xl mx-auto rounded-xl p-6">
-          <h1 className="text-2xl font-lato font-semibold text-center sm:text-left mb-3">Proof of Work</h1>
+          <h1 className="text-2xl text-neutral-200 font-lato font-semibold text-center sm:text-left mb-3">Proof of Work</h1>
           <div className="space-y-5">
-            <Tilt className="w-full">
-              <div className="border border-gray-600 rounded-xl flex flex-col justify-between p-6 h-full">
+            <div className="border border-gray-600 rounded-xl flex flex-col sm:flex-row p-6 h-full gap-6">
+              {/* Left: Image */}
+              <div className="flex-shrink-0  relative sm:top-4 w-full sm:w-1/3">
+                <img
+                  src="src/assets/image.png" 
+                  alt="Backdrop UI"
+                  className="rounded-lg w-full h-auto object-cover"
+                />
+              </div>
+
+              {/* Right: Content */}
+              <div className="flex flex-col justify-between flex-grow">
                 <div className="flex justify-center sm:justify-end gap-3 mb-4">
                   <a href="https://sivakumar232.github.io/BackdropUI/" target="_blank" rel="noopener noreferrer">
                     <FaLink className="text-2xl text-gray-200 hover:scale-110 transition" />
@@ -117,22 +127,27 @@ const Connector = () => {
                     <BsGithub className="text-2xl text-gray-200 hover:scale-110 transition" />
                   </a>
                 </div>
+
+                {/* Title and description */}
                 <div className="mb-4">
                   <h2 className="text-lg sm:text-xl font-semibold">BackdropUi</h2>
                   <p className="text-sm text-gray-200 mt-2">
                     Go-to place to find background gradients, ready to use in your projects, made with Tailwind.
                   </p>
                 </div>
+
+                {/* Tech Stack */}
                 <div className="flex flex-wrap gap-2">
-                  <div className="flex items-center gap-1 bg-white text-black rounded px-2 py-1 text-xs">
+                  <div className="flex items-center gap-1 bg-neutral-800 text-white rounded px-2 py-1 text-xs">
                     <FaReact className="text-cyan-500" /> React
                   </div>
-                  <div className="flex items-center gap-1 bg-white text-black rounded px-2 py-1 text-xs">
+                  <div className="flex items-center gap-1 bg-neutral-800 text-white rounded px-2 py-1 text-xs">
                     <SiTailwindcss className="text-cyan-600" /> Tailwind CSS
                   </div>
                 </div>
               </div>
-            </Tilt>
+            </div>
+
           </div>
         </div>
 
