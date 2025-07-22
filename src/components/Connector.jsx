@@ -4,18 +4,17 @@ import { FaXTwitter } from 'react-icons/fa6';
 import GitHubCalendar from 'react-github-calendar';
 import { useLocation } from 'react-router-dom';
 import Marque from './Marque';
-import Experience from './Experience';
-import Projects from './Projects';
 import { FaReact } from 'react-icons/fa';
 import { SiTailwindcss } from 'react-icons/si';
 import { BsGithub } from 'react-icons/bs';
 import { FaLink } from 'react-icons/fa6';
-import { Tilt } from "@/components/ui/Tilt";
 import { SiLeetcode } from 'react-icons/si';
 import { useState, useEffect } from 'react';
-
+import { Sun, Moon } from 'lucide-react';
+import useTheme from '../context/Theme';
 
 const Connector = () => {
+  const [themeMode,setThemeMode] =useState('light')
   const [time, setTime] = useState(new Date());
   useEffect(() => {
     const timerId = setInterval(() => setTime(new Date()), 1000);
@@ -59,8 +58,11 @@ const Connector = () => {
           <div className='border flex relative space-x-1 top-2 rounded-md p-1 border-green-400 text-monospace'>
             <span className='blink_me relative top-1.5'></span><p className='text-xs text-green-400'>Available</p>
           </div>
-          <div className='text-neutral-400 fixed top-5 right-2'>
+          <div className='text-neutral-400 fixed top-5 left-2'>
             <p>{`${hours % 12 === 0 ? 12 : String(hours % 12).padStart(2, '0')}:${String(minutes).padStart(2, '0')} ${ampm}`}</p>
+          </div>
+          <div className='text-neutral-400 fixed top-5 right-2'>
+            <Moon/>
           </div>
         </div>
 
@@ -111,7 +113,7 @@ const Connector = () => {
               {/* Left: Image */}
               <div className="flex-shrink-0  relative sm:top-4 w-full sm:w-1/3">
                 <img
-                  src="src/assets/image.png" 
+                  src="src/assets/image.png"
                   alt="Backdrop UI"
                   className="rounded-lg w-full h-auto object-cover"
                 />
