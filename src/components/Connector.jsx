@@ -10,11 +10,8 @@ import { BsGithub } from 'react-icons/bs';
 import { FaLink } from 'react-icons/fa6';
 import { SiLeetcode } from 'react-icons/si';
 import { useState, useEffect } from 'react';
-import { Sun, Moon } from 'lucide-react';
-import useTheme from '../context/Theme';
-
+import DarkThemeToggle from './DarkThemeToggle';
 const Connector = () => {
-  const [themeMode,setThemeMode] =useState('light')
   const [time, setTime] = useState(new Date());
   useEffect(() => {
     const timerId = setInterval(() => setTime(new Date()), 1000);
@@ -27,7 +24,7 @@ const Connector = () => {
   const ampm = time.getHours >= 12 ? 'AM' : 'PM';
 
   return (
-    <div className="overflow-x-hidden bg-neutral-900 bg-no-repeat bg-center bg-fixed min-h-screen">
+    <div className="overflow-x-hidden bg-red-100 bg-blue dark:bg-neutral-900 bg-no-repeat bg-center bg-fixed min-h-screen">
 
       <div className="px-4 mt-5 space-y-6">
         {/* Profile Section */}
@@ -38,8 +35,8 @@ const Connector = () => {
             className="w-28 h-28 object-cover rounded-xl shadow-lg"
           />
           <div className="text-center sm:text-left">
-            <h1 className="text-3xl sm:text-4xl font-semibold font-montserrat">Siva Kumar</h1>
-            <p className="text-base font-lato mb-2 text-neutral-200">Software Engineer</p>
+            <h1 className="text-3xl sm:text-4xl font-semibold text-black dark:text-white font-montserrat">Siva Kumar</h1>
+            <p className="text-base font-lato mb-2 text-red-500 dark:text-neutral-200">Software Engineer</p>
             <div className="flex justify-center sm:justify-start space-x-4 mt-1">
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
                 <FaLinkedin className="text-2xl hover:scale-110 hover:text-slate-400 transition duration-300" />
@@ -56,13 +53,13 @@ const Connector = () => {
             </div>
           </div>
           <div className='border flex relative space-x-1 top-2 rounded-md p-1 border-green-400 text-monospace'>
-            <span className='blink_me relative top-1.5'></span><p className='text-xs text-green-400'>Available</p>
+            <span className='blink_me relative top-1.5'></span><p className='text-xs   text-green-400'>Available</p>
           </div>
           <div className='text-neutral-400 fixed top-5 left-2'>
             <p>{`${hours % 12 === 0 ? 12 : String(hours % 12).padStart(2, '0')}:${String(minutes).padStart(2, '0')} ${ampm}`}</p>
           </div>
           <div className='text-neutral-400 fixed top-5 right-2'>
-            <Moon/>
+            {/* <DarkThemeToggle/> */}
           </div>
         </div>
 
@@ -73,11 +70,11 @@ const Connector = () => {
             Hey! I'm <span className='text-white'>Sivakumar</span>, an undergraduate computerscience student and <span className='text-white'>a fullstack developer</span> who loves turning ideas into reality.
           </p>
           <p className="text-s text-slate-400 text-left"><span className='text-white'></span>
-            I primarily work with <span className='text-white'>React</span>, <span className='text-white'>Node.js</span>, <span className='text-white'>Express</span>, <span className='text-white'>MomgoDb</span>, and <span className='text-white'>Tailwind</span>. I have experience with PostgreSQL, but I’m flexible and quick to adapt to other technologies and stacks as needed.
+            I primarily work with <span className='text-white'>React</span>, <span className='text-white'>Node.js</span>, <span className='text-white'>Express</span>, <span className='text-white'>MongoDb</span>, and <span className='text-white'>Tailwind</span>. I have experience with PostgreSQL, but I’m flexible and quick to adapt to other technologies and stacks as needed.
           </p>
           <h1 className="text-2xl font-lato font-semibold text-left">Hire Me.</h1>
           <p className="text-s text-slate-400 text-left">
-            I’m currently <span className='text-white'>available</span> for <span className='text-white'>internships</span> and <span className='text-white'>freelance</span> work—ready to jump in and bring my skills to your team.
+            I'm currently <span className='text-white'>available</span> for <span className='text-white'>internships</span> and <span className='text-white'>freelance</span> work—ready to jump in and bring my skills to your team.
           </p>
         </div>
 
