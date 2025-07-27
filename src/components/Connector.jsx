@@ -72,7 +72,7 @@ const Connector = () => {
             Hey! I'm <span className='text-white'>Sivakumar</span>, an undergraduate computerscience student and <span className='text-white'>a fullstack developer</span> who loves turning ideas into reality.
           </p>
           <p className="text-s text-slate-400 text-left"><span className='text-white'></span>
-            I primarily work with <span className='text-white'>React</span>, <span className='text-white'>Node.js</span>, <span className='text-white'>Express</span>, <span className='text-white'>MomgoDb</span>, and <span className='text-white'>Tailwind</span>. I have experience with PostgreSQL, but I’m flexible and quick to adapt to other technologies and stacks as needed.
+            I primarily work with <span className='text-white'>React</span>, <span className='text-white'>Node.js</span>, <span className='text-white'>Express</span>, <span className='text-white'>MomgoDb</span>, and <span className='text-white'>Tailwind</span>. I have experience with MySql, but I’m flexible and quick to adapt to other technologies and stacks as needed.
           </p>
           <h1 className="text-2xl font-lato font-semibold text-left">Hire Me.</h1>
           <p className="text-s text-slate-400 text-left">
