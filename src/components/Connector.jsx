@@ -10,12 +10,10 @@ import { BsGithub } from 'react-icons/bs';
 import { FaLink } from 'react-icons/fa6';
 import { SiLeetcode } from 'react-icons/si';
 import { useState, useEffect } from 'react';
-import { Sun, Moon } from 'lucide-react';
 import mobImage from '../assets/mob.jpg';
 import Image1 from '../assets/image.png';
 
 const Connector = () => {
-  const [themeMode,setThemeMode] =useState('light')
   const [time, setTime] = useState(new Date());
   useEffect(() => {
     const timerId = setInterval(() => setTime(new Date()), 1000);
@@ -39,7 +37,7 @@ const Connector = () => {
           />
           <div className="text-center sm:text-left">
             <h1 className="text-3xl sm:text-4xl font-semibold font-montserrat">Siva Kumar</h1>
-            <p className="text-base font-lato mb-2 text-neutral-200">Software Engineer</p>
+            <p className="text-base font-lato mb-2 text-neutral-200">Web Developer</p>
             <div className="flex justify-center sm:justify-start space-x-4 mt-1">
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
                 <FaLinkedin className="text-2xl hover:scale-110 hover:text-slate-400 transition duration-300" />
