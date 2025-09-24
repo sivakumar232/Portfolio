@@ -12,6 +12,12 @@ import { SiLeetcode } from 'react-icons/si';
 import { useState, useEffect } from 'react';
 import mobImage from '../assets/mob.jpg';
 import Image1 from '../assets/image.png';
+import timetableimg from '../assets/timtable.png';
+import { FaNodeJs } from 'react-icons/fa';
+import { SiExpress } from 'react-icons/si';
+import { SiMongodb } from 'react-icons/si';
+import { FaPython } from 'react-icons/fa';
+import { FlaskConical } from 'lucide-react';
 
 const Connector = () => {
   const [time, setTime] = useState(new Date());
@@ -23,6 +29,12 @@ const Connector = () => {
   const minutes = time.getMinutes();
   const location = useLocation();
   const ampm = time.getHours >= 12 ? 'AM' : 'PM';
+const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+const handleMouseMove = (e) => {
+  const rect = e.currentTarget.getBoundingClientRect();
+  setMousePosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+};
 
   return (
     <div className="overflow-x-hidden bg-neutral-900 bg-no-repeat bg-center bg-fixed min-h-screen">
@@ -103,53 +115,79 @@ const Connector = () => {
         </div>
 
         {/* Projects Section */}
-        <div className="text-white font-roboto-mono w-full max-w-4xl mx-auto rounded-xl p-6">
-          <h1 className="text-2xl text-neutral-200 font-lato font-semibold text-center sm:text-left mb-3">Proof of Work</h1>
-          <div className="space-y-5">
-            <div className="border border-gray-600 rounded-xl flex flex-col sm:flex-row p-6 h-full gap-6">
-              {/* Left: Image */}
-              <div className="flex-shrink-0  relative sm:top-4 w-full sm:w-1/3">
-                <img
-                  src={Image1}
-                  alt="Backdrop UI"
-                  className="rounded-lg w-full h-auto object-cover"
-                />
-              </div>
+       {/* --- Projects Section --- */}
+{/* Projects Section */}
+<div className="text-white font-roboto-mono w-full max-w-4xl mx-auto p-6">
+  <h1 className="text-2xl text-neutral-200 font-lato font-semibold text-center sm:text-left mb-6">
+    Projects
+  </h1>
 
-              {/* Right: Content */}
-              <div className="flex flex-col justify-between flex-grow">
-                <div className="flex justify-center sm:justify-end gap-3 mb-4">
-                  <a href="https://sivakumar232.github.io/BackdropUI/" target="_blank" rel="noopener noreferrer">
-                    <FaLink className="text-2xl text-gray-200 hover:scale-110 transition" />
-                  </a>
-                  <a href="https://github.com/sivakumar232/BackdropUI" target="_blank" rel="noopener noreferrer">
-                    <BsGithub className="text-2xl text-gray-200 hover:scale-110 transition" />
-                  </a>
-                </div>
+  {/* Grid container */}
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-                {/* Title and description */}
-                <div className="mb-4">
-                  <h2 className="text-lg sm:text-xl font-semibold">BackdropUi</h2>
-                  <p className="text-sm text-gray-200 mt-2">
-                    Go-to place to find background gradients, ready to use in your projects, made with Tailwind.
-                  </p>
-                </div>
-
-                {/* Tech Stack */}
-                <div className="flex flex-wrap gap-2">
-                  <div className="flex items-center cursor-pointer border border-gray-600  hover:border-sky-500 gap-1 bg-neutral-800 text-white rounded px-2 py-1 text-xs">
-                    <FaReact className="text-cyan-500" /> React
-                  </div>
-                  <div className="flex items-center cursor-pointer border border-gray-600  hover:border-sky-500 gap-1 bg-neutral-800 text-white rounded px-2 py-1 text-xs">
-                    <SiTailwindcss className="text-cyan-600" /> Tailwind CSS
-                  </div>
-                </div>
-              </div>
-            </div>
-
+    {/* Project 1: BackdropUi */}
+    <div className="bg-neutral-800 border border-neutral-700 rounded-lg  transition-all duration-200 hover:shadow-[6px_6px_0px_rgba(110,110,110,0.2)] hover:-translate-y-1">
+      <div>
+        <img
+          src={Image1}
+          alt="Backdrop UI"
+          className="w-full h-48 object-cover rounded-t-lg"
+        />
+      </div>
+      <div className="p-4">
+        <h2 className="text-lg font-bold text-neutral-100">BackdropUi</h2>
+        <p className="text-sm text-neutral-400 mt-1">
+          Go-to place to find background gradients, ready to use in your projects, made with Tailwind.
+        </p>
+        {/* Tech Stack */}
+        <div className="flex flex-wrap gap-2 mt-4">
+          <div className="flex items-center gap-1.5 bg-neutral-900 text-white rounded px-2 py-1 text-xs border border-neutral-700">
+            <FaReact className="text-sky-400" /> React
+          </div>
+          <div className="flex items-center gap-1.5 bg-neutral-900 text-white rounded px-2 py-1 text-xs border border-neutral-700">
+            <SiTailwindcss className="text-cyan-600" /> Tailwind CSS
           </div>
         </div>
+      </div>
+    </div>
 
+    {/* Project 2: Sync AI */}
+    <div className="bg-neutral-800 border border-neutral-700 rounded-lg  transition-all duration-200 hover:shadow-[6px_6px_0px_rgba(110,110,110,0.2)] hover:-translate-y-1">
+      <div>
+        <img
+          src={timetableimg}
+          alt="Sync AI"
+          className="w-full h-48 object-cover rounded-t-lg"
+        />
+      </div>
+      <div className="p-4">
+        <h2 className="text-lg font-bold text-neutral-100">Sync AI</h2>
+        <p className="text-sm text-neutral-400 mt-1">
+          An AI-powered scheduling engine that uses a Genetic Algorithm to automatically generate optimized, clash-free timetables.
+        </p>
+        {/* Tech Stack */}
+        <div className="flex flex-wrap gap-2 mt-4">
+          <div className="flex items-center gap-1.5 bg-neutral-900 text-white rounded px-2 py-1 text-xs border border-neutral-700">
+            <FaReact className="text-sky-400" /> React
+          </div>
+          <div className="flex items-center gap-1.5 bg-neutral-900 text-white rounded px-2 py-1 text-xs border border-neutral-700">
+            <FaNodeJs className="text-green-500" /> Node JS
+          </div>
+          <div className="flex items-center gap-1.5 bg-neutral-900 text-white rounded px-2 py-1 text-xs border border-neutral-700">
+            <SiExpress className="text-gray-200" /> Express JS
+          </div>
+          <div className="flex items-center gap-1.5 bg-neutral-900 text-white rounded px-2 py-1 text-xs border border-neutral-700">
+            <SiMongodb className="text-emerald-500" /> MongoDB
+          </div>
+          <div className="flex items-center gap-1.5 bg-neutral-900 text-white rounded px-2 py-1 text-xs border border-neutral-700">
+            <FaPython className="text-blue-500" /> Python
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
         {/* Footer */}
         <div className="w-full text-center border-t py-4 text-sm text-gray-400">
           <span className="font-semibold text-white">Made with ❤️ by Siva Kumar</span>
