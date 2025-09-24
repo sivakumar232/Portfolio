@@ -123,70 +123,97 @@ const handleMouseMove = (e) => {
   </h1>
 
   {/* Grid container */}
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+ <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-    {/* Project 1: BackdropUi */}
-    <div className="bg-neutral-800 border border-neutral-700 rounded-lg  transition-all duration-200 hover:shadow-[6px_6px_0px_rgba(110,110,110,0.2)] hover:-translate-y-1">
-      <div>
-        <img
-          src={Image1}
-          alt="Backdrop UI"
-          className="w-full h-48 object-cover rounded-t-lg"
-        />
-      </div>
-      <div className="p-4">
+  {/* Project 1: BackdropUi */}
+  <div className="bg-neutral border border-neutral-700 rounded-lg transition-all duration-200 hover:-translate-y-1">
+    <div>
+      <img
+        src={Image1}
+        alt="Backdrop UI"
+        className="w-full h-48 object-cover rounded-t-lg"
+      />
+    </div>
+    <div className="p-4">
+      {/* Card Header with Title and Links */}
+      <div className="flex justify-between items-center mb-2">
         <h2 className="text-lg font-bold text-neutral-100">BackdropUi</h2>
-        <p className="text-sm text-neutral-400 mt-1">
-          Go-to place to find background gradients, ready to use in your projects, made with Tailwind.
-        </p>
-        {/* Tech Stack */}
-        <div className="flex flex-wrap gap-2 mt-4">
-          <div className="flex items-center gap-1.5 bg-neutral-900 text-white rounded px-2 py-1 text-xs border border-neutral-700">
-            <FaReact className="text-sky-400" /> React
-          </div>
-          <div className="flex items-center gap-1.5 bg-neutral-900 text-white rounded px-2 py-1 text-xs border border-neutral-700">
-            <SiTailwindcss className="text-cyan-600" /> Tailwind CSS
-          </div>
+        <div className="flex gap-3">
+          <a href="https://github.com/sivakumar232/BackdropUI" target="_blank" rel="noopener noreferrer">
+            <BsGithub className="text-xl text-neutral-400 hover:text-white transition" />
+          </a>
+          <a href="https://sivakumar232.github.io/BackdropUI/" target="_blank" rel="noopener noreferrer">
+            <FaLink className="text-xl text-neutral-400 hover:text-white transition" />
+          </a>
+        </div>
+      </div>
+      
+      <p className="text-sm text-neutral-400 mt-1">
+        Go-to place to find background gradients, ready to use in your projects, made with Tailwind.
+      </p>
+      
+      {/* Tech Stack */}
+      <div className="flex flex-wrap gap-2 mt-4">
+        <div className="flex items-center gap-1.5 bg-neutral-900 text-white rounded px-2 py-1 text-xs border border-neutral-700">
+          <FaReact className="text-sky-400" /> React
+        </div>
+        <div className="flex items-center gap-1.5 bg-neutral-900 text-white rounded px-2 py-1 text-xs border border-neutral-700">
+          <SiTailwindcss className="text-cyan-600" /> Tailwind CSS
         </div>
       </div>
     </div>
-
-    {/* Project 2: Sync AI */}
-    <div className="bg-neutral-800 border border-neutral-700 rounded-lg  transition-all duration-200 hover:shadow-[6px_6px_0px_rgba(110,110,110,0.2)] hover:-translate-y-1">
-      <div>
-        <img
-          src={timetableimg}
-          alt="Sync AI"
-          className="w-full h-48 object-cover rounded-t-lg"
-        />
-      </div>
-      <div className="p-4">
-        <h2 className="text-lg font-bold text-neutral-100">Sync AI</h2>
-        <p className="text-sm text-neutral-400 mt-1">
-          An AI-powered scheduling engine that uses a Genetic Algorithm to automatically generate optimized, clash-free timetables.
-        </p>
-        {/* Tech Stack */}
-        <div className="flex flex-wrap gap-2 mt-4">
-          <div className="flex items-center gap-1.5 bg-neutral-900 text-white rounded px-2 py-1 text-xs border border-neutral-700">
-            <FaReact className="text-sky-400" /> React
-          </div>
-          <div className="flex items-center gap-1.5 bg-neutral-900 text-white rounded px-2 py-1 text-xs border border-neutral-700">
-            <FaNodeJs className="text-green-500" /> Node JS
-          </div>
-          <div className="flex items-center gap-1.5 bg-neutral-900 text-white rounded px-2 py-1 text-xs border border-neutral-700">
-            <SiExpress className="text-gray-200" /> Express JS
-          </div>
-          <div className="flex items-center gap-1.5 bg-neutral-900 text-white rounded px-2 py-1 text-xs border border-neutral-700">
-            <SiMongodb className="text-emerald-500" /> MongoDB
-          </div>
-          <div className="flex items-center gap-1.5 bg-neutral-900 text-white rounded px-2 py-1 text-xs border border-neutral-700">
-            <FaPython className="text-blue-500" /> Python
-          </div>
-        </div>
-      </div>
-    </div>
-
   </div>
+
+  {/* Project 2: Sync AI */}
+  <div className="bg-neutral border border-neutral-700 rounded-lg transition-all duration-200 hover:-translate-y-1">
+    <div>
+      <img
+        src={timetableimg}
+        alt="Sync AI"
+        className="w-full h-48 object-cover rounded-t-lg"
+      />
+    </div>
+    <div className="p-4">
+      {/* Card Header with Title and Links */}
+      <div className="flex justify-between items-center mb-2">
+        <h2 className="text-lg font-bold text-neutral-100">Sync AI</h2>
+        <div className="flex gap-3">
+          <a href="https://github.com/sivakumar232/timetable-frontend" target="_blank" rel="noopener noreferrer">
+            <BsGithub className="text-xl text-neutral-400 hover:text-white transition" />
+          </a>
+          {/* Add live link if available, or remove this 'a' tag */}
+          {/* <a href="#" target="_blank" rel="noopener noreferrer">
+            <FaLink className="text-xl text-neutral-400 hover:text-white transition" />
+          </a> */}
+        </div>
+      </div>
+      
+      <p className="text-sm text-neutral-400 mt-1">
+        An AI-powered scheduling engine that uses a Genetic Algorithm to automatically generate optimized, clash-free timetables.
+      </p>
+
+      {/* Tech Stack */}
+      <div className="flex flex-wrap gap-2 mt-4">
+        <div className="flex items-center gap-1.5 bg-neutral-900 text-white rounded px-2 py-1 text-xs border border-neutral-700">
+          <FaReact className="text-sky-400" /> React
+        </div>
+        <div className="flex items-center gap-1.5 bg-neutral-900 text-white rounded px-2 py-1 text-xs border border-neutral-700">
+          <FaNodeJs className="text-green-500" /> Node JS
+        </div>
+        <div className="flex items-center gap-1.5 bg-neutral-900 text-white rounded px-2 py-1 text-xs border border-neutral-700">
+          <SiExpress className="text-gray-200" /> Express JS
+        </div>
+        <div className="flex items-center gap-1.5 bg-neutral-900 text-white rounded px-2 py-1 text-xs border border-neutral-700">
+          <SiMongodb className="text-emerald-500" /> MongoDB
+        </div>
+        <div className="flex items-center gap-1.5 bg-neutral-900 text-white rounded px-2 py-1 text-xs border border-neutral-700">
+          <FaPython className="text-blue-500" /> Python
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
 </div>
         {/* Footer */}
         <div className="w-full text-center border-t py-4 text-sm text-gray-400">
