@@ -1,12 +1,14 @@
 @import "tailwindcss";
+@variant dark (&:where(.dark, .dark *));
 
 /* Raleway */
 @font-face {
   font-family: Raleway;
   src: url("./assets/fonts/Raleway/Raleway-VariableFont_wght.ttf");
 }
-@font-face{
-  font-family: Orbitron ;
+
+@font-face {
+  font-family: Orbitron;
   src: url("./assets/fonts/Orbitron/Orbitron-VariableFont_wght.ttf");
 }
 
@@ -22,49 +24,58 @@
   src: url("./assets/fonts/Lato/Lato-Regular.ttf");
   font-weight: 400;
 }
+
 @font-face {
   font-family: Lato;
   src: url("./assets/fonts/Lato/Lato-Bold.ttf");
   font-weight: 700;
 }
+
 @font-face {
   font-family: Lato;
   src: url("./assets/fonts/Lato/Lato-BoldItalic.ttf");
   font-weight: 700;
   font-style: italic;
 }
+
 @font-face {
   font-family: Lato;
   src: url("./assets/fonts/Lato/Lato-Italic.ttf");
   font-style: italic;
 }
+
 @font-face {
   font-family: Lato;
   src: url("./assets/fonts/Lato/Lato-Light.ttf");
   font-weight: 300;
 }
+
 @font-face {
   font-family: Lato;
   src: url("./assets/fonts/Lato/Lato-LightItalic.ttf");
   font-weight: 300;
   font-style: italic;
 }
+
 @font-face {
   font-family: Lato;
   src: url("./assets/fonts/Lato/Lato-Black.ttf");
   font-weight: 900;
 }
+
 @font-face {
   font-family: Lato;
   src: url("./assets/fonts/Lato/Lato-BlackItalic.ttf");
   font-weight: 900;
   font-style: italic;
 }
+
 @font-face {
   font-family: Lato;
   src: url("./assets/fonts/Lato/Lato-Thin.ttf");
   font-weight: 100;
 }
+
 @font-face {
   font-family: Lato;
   src: url("./assets/fonts/Lato/Lato-ThinItalic.ttf");
@@ -77,6 +88,7 @@
   font-family: Roboto;
   src: url("./assets/fonts/Roboto/Roboto-VariableFont_wdth,wght.ttf");
 }
+
 @font-face {
   font-family: Roboto;
   src: url("./assets/fonts/Roboto/Roboto-Italic-VariableFont_wdth,wght.ttf");
@@ -88,6 +100,7 @@
   font-family: "Roboto Mono";
   src: url("./assets/fonts/Roboto_Mono/RobotoMono-VariableFont_wght.ttf");
 }
+
 @font-face {
   font-family: "Roboto Mono";
   src: url("./assets/fonts/Roboto_Mono/RobotoMono-Italic-VariableFont_wght.ttf");
@@ -100,81 +113,101 @@
   src: url("./assets/fonts/Ubuntu/Ubuntu-Regular.ttf");
   font-weight: 400;
 }
+
 @font-face {
   font-family: Ubuntu;
   src: url("./assets/fonts/Ubuntu/Ubuntu-Italic.ttf");
   font-style: italic;
 }
+
 @font-face {
   font-family: Ubuntu;
   src: url("./assets/fonts/Ubuntu/Ubuntu-Bold.ttf");
   font-weight: 700;
 }
+
 @font-face {
   font-family: Ubuntu;
   src: url("./assets/fonts/Ubuntu/Ubuntu-BoldItalic.ttf");
   font-weight: 700;
   font-style: italic;
 }
+
 @font-face {
   font-family: Ubuntu;
   src: url("./assets/fonts/Ubuntu/Ubuntu-Light.ttf");
   font-weight: 300;
 }
+
 @font-face {
   font-family: Ubuntu;
   src: url("./assets/fonts/Ubuntu/Ubuntu-LightItalic.ttf");
   font-weight: 300;
   font-style: italic;
 }
+
 @font-face {
   font-family: Ubuntu;
   src: url("./assets/fonts/Ubuntu/Ubuntu-Medium.ttf");
   font-weight: 500;
 }
+
 @font-face {
   font-family: Ubuntu;
   src: url("./assets/fonts/Ubuntu/Ubuntu-MediumItalic.ttf");
   font-weight: 500;
   font-style: italic;
 }
-@font-face{
-    font-family: Bebas_Neue;
+
+@font-face {
+  font-family: Bebas_Neue;
   src: url("./assets/fonts/Bebas_Neue/BebasNeue-Regular.ttf");
   font-weight: 500;
 }
-@font-face{
-    font-family: Bangers;
+
+@font-face {
+  font-family: Bangers;
   src: url("./assets/fonts/Bangers/Bangers-Regular.ttf");
   font-weight: 500;
 }
+
 @theme {
-  --font-banger:Bangers;
+  --font-banger: Bangers;
   --font-raleway: Raleway, "sans-serif";
-  --font-bebas_neue:Bebas_Neue,"sans-serif";
+  --font-bebas_neue: Bebas_Neue, "sans-serif";
   --font-montserrat: Montserrat, "sans-serif";
   --font-lato: Lato, "sans-serif";
   --font-roboto: Roboto, "sans-serif";
   --font-roboto-mono: "Roboto Mono", "monospace";
   --font-ubuntu: Ubuntu, "sans-serif";
-  --font-orbitron:Orbitron,"monospace";
+  --font-orbitron: Orbitron, "monospace";
 }
+
 .blink_me {
   animation: blinker 2s linear infinite;
   width: 5px;
   height: 5px;
   display: inline-block;
-  border: 1px solid rgb(18, 225, 18);
-  background-color: rgb(18, 225, 18);
+  border: 1px solid black;
+  background-color: black;
   border-radius: 100%;
 }
+
+@media (prefers-color-scheme: dark) {
+  .dark .blink_me {
+    border: 1px solid white;
+    background-color: white;
+  }
+}
+
 @keyframes blinker {
   50% {
     opacity: 0.6;
   }
 }
-::selection{
-  color: black  ;
+
+::selection {
+  color: black;
   background-color: white;
 }
 

@@ -1,10 +1,11 @@
-import React from "react";  
+import React from "react";
 import { useEffect, useState } from "react";
 import { Sun, Moon } from 'lucide-react';
 
 const DarkThemeToggle = () => {
   const [isDark, setIsDark] = useState(() => {
-    return localStorage.getItem("theme") === "dark";
+    const savedTheme = localStorage.getItem("theme");
+    return savedTheme === "dark" || savedTheme === null; // Default to dark
   });
 
   useEffect(() => {
@@ -20,10 +21,15 @@ const DarkThemeToggle = () => {
 
   return (
     <button
-      className="px-4 py-2 bg-gray-200 dark:bg-gray-700 dark:text-white rounded"
+      className="fixed top-6 right-6 z-50 p-3 bg-white dark:bg-black border-2 border-black dark:border-white rounded-full hover:scale-110 transition-transform duration-200 shadow-lg"
       onClick={() => setIsDark(!isDark)}
+      aria-label="Toggle theme"
     >
-      {isDark ? <Sun /> :<Moon/>}
+      {isDark ? (
+        <Sun className="w-5 h-5 text-black dark:text-white" />
+      ) : (
+        <Moon className="w-5 h-5 text-black dark:text-white" />
+      )}
     </button>
   );
 };
