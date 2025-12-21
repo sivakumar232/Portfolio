@@ -87,7 +87,7 @@ const Connector = () => {
             className="w-28 h-28 object-cover rounded-xl shadow-lg"
           />
           <div className="text-center sm:text-left">
-            <h1 className="text-3xl sm:text-4xl font-semibold font-montserrat"> Hi, I'mSiva Kumar</h1>
+            <h1 className="text-3xl sm:text-4xl font-semibold font-montserrat"> Hi, I'm Siva Kumar</h1>
             <p className="text-base font-lato mb-2 text-neutral-700 dark:text-neutral-300">Web Developer</p>
             <div className="flex justify-center sm:justify-start items-center space-x-3 mt-1">
               <div className='border flex space-x-1 rounded-md px-2 py-1 border-black dark:border-white'>
