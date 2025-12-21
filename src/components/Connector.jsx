@@ -46,6 +46,25 @@ const Connector = () => {
     return () => observer.disconnect();
   }, []);
 
+  // Intersection Observer for scroll animations
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    const elements = document.querySelectorAll('.scroll-fade-in');
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   const hours = time.getHours();
   const minutes = time.getMinutes();
   const location = useLocation();
@@ -61,42 +80,31 @@ const Connector = () => {
     <div className="overflow-x-hidden bg-white dark:bg-black bg-no-repeat bg-center bg-fixed min-h-screen transition-colors duration-300">
       <div className="px-4 mt-5 space-y-6">
         {/* Profile Section */}
-        <div className="text-black dark:text-white flex flex-col items-center sm:flex-row sm:items-start font-roboto-mono m-auto rounded-xl p-6 w-full max-w-4xl space-y-4 sm:space-y-0 sm:space-x-6">
+        <div className="scroll-fade-in text-black dark:text-white flex flex-col items-center sm:flex-row sm:items-start font-roboto-mono m-auto rounded-xl p-6 w-full max-w-3xl space-y-4 sm:space-y-0 sm:space-x-6">
           <img
             src={mobImage}
             alt="Profile"
             className="w-28 h-28 object-cover rounded-xl shadow-lg"
           />
           <div className="text-center sm:text-left">
-            <h1 className="text-3xl sm:text-4xl font-semibold font-montserrat">Siva Kumar</h1>
+            <h1 className="text-3xl sm:text-4xl font-semibold font-montserrat"> Hi, I'mSiva Kumar</h1>
             <p className="text-base font-lato mb-2 text-neutral-700 dark:text-neutral-300">Web Developer</p>
-            <div className="flex justify-center sm:justify-start space-x-4 mt-1">
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                <FaLinkedin className="text-2xl hover:scale-110 hover:text-neutral-500 dark:hover:text-neutral-400 transition duration-300" />
-              </a>
-              <a href="https://github.com/sivakumar232" target="_blank" rel="noopener noreferrer">
-                <FaGithub className="text-2xl hover:scale-110 hover:text-neutral-500 dark:hover:text-neutral-400 transition duration-300" />
-              </a>
-              <a href="https://twitter.com/sivakumarr3105" target="_blank" rel="noopener noreferrer">
-                <FaXTwitter className="text-2xl hover:scale-110 hover:text-neutral-500 dark:hover:text-neutral-400 transition duration-300" />
-              </a>
-              <a href="https://leetcode.com/sivakumarrrrrr2005" target="_blank" rel="noopener noreferrer">
-                <SiLeetcode className="text-2xl hover:scale-110 hover:text-neutral-500 dark:hover:text-neutral-400 transition duration-300" />
-              </a>
+            <div className="flex justify-center sm:justify-start items-center space-x-3 mt-1">
+              <div className='border flex space-x-1 rounded-md px-2 py-1 border-black dark:border-white'>
+                <span className='blink_me relative top-1.5'></span>
+                <p className='text-xs text-black dark:text-white'>Available</p>
+              </div>
+              <div className='text-neutral-600 dark:text-neutral-400'>
+                <p className='text-xs'>{`${hours % 12 === 0 ? 12 : String(hours % 12).padStart(2, '0')}:${String(minutes).padStart(2, '0')} ${ampm}`}</p>
+              </div>
             </div>
-          </div>
-          <div className='border flex relative space-x-1 top-2 rounded-md p-1 border-black dark:border-white text-monospace'>
-            <span className='blink_me relative top-1.5'></span><p className='text-xs text-black dark:text-white'>Available</p>
-          </div>
-          <div className='text-neutral-600 dark:text-neutral-400 fixed top-5 left-2'>
-            <p>{`${hours % 12 === 0 ? 12 : String(hours % 12).padStart(2, '0')}:${String(minutes).padStart(2, '0')} ${ampm}`}</p>
           </div>
           <div className='text-neutral-400 fixed top-5 right-2'>
           </div>
         </div>
 
         {/* About Section */}
-        <div className="text-black dark:text-white flex flex-col font-roboto-mono m-auto rounded-xl p-6 w-full max-w-4xl space-y-2">
+        <div className="scroll-fade-in text-black dark:text-white flex flex-col font-roboto-mono m-auto rounded-xl p-6 w-full max-w-3xl space-y-2">
           <h1 className="text-2xl font-lato font-semibold text-left">About Me.</h1>
           <p className="text-sm text-neutral-600 dark:text-neutral-400 text-left">
             Hey! I'm <span className='text-black dark:text-white font-semibold'>Sivakumar</span>, an undergraduate computerscience student and <span className='text-black dark:text-white font-semibold'>a fullstack developer</span> who loves turning ideas into reality.
@@ -111,7 +119,7 @@ const Connector = () => {
         </div>
 
         {/* Skills Section */}
-        <div className="text-black dark:text-white w-full max-w-4xl mx-auto rounded-xl p-6">
+        <div className="scroll-fade-in text-black dark:text-white w-full max-w-3xl mx-auto rounded-xl p-6">
           <h1 className="text-2xl font-lato font-semibold text-center sm:text-left mb-4">Skills & Tools</h1>
           <div className="flex flex-wrap items-center gap-2">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-black/50 dark:border-white/35 bg-white dark:bg-black shadow-sm text-sm font-semibold transition-transform hover:-translate-y-0.5">
@@ -166,7 +174,7 @@ const Connector = () => {
         </div>
 
         {/* GitHub Activity */}
-        <div className="text-black dark:text-white font-roboto-mono w-full max-w-4xl mx-auto rounded-xl p-6">
+        <div className="scroll-fade-in text-black dark:text-white font-roboto-mono w-full max-w-3xl mx-auto rounded-xl p-6">
           <h1 className="text-2xl font-lato font-semibold text-center sm:text-left">GitHub Activity</h1>
           <div className="mt-3 flex justify-center sm:justify-start">
             <GitHubCalendar
@@ -184,7 +192,7 @@ const Connector = () => {
         {/* Projects Section */}
         {/* --- Projects Section --- */}
         {/* Projects Section */}
-        <div className="text-black dark:text-white font-roboto-mono w-full max-w-4xl mx-auto p-6">
+        <div className="scroll-fade-in text-black dark:text-white font-roboto-mono w-full max-w-3xl mx-auto p-6">
           <h1 className="text-2xl font-lato font-semibold text-center sm:text-left mb-6">
             Projects
           </h1>

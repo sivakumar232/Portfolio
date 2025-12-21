@@ -4,29 +4,11 @@ import { FaXTwitter } from 'react-icons/fa6';
 import { Sun, Moon, BookOpen } from 'lucide-react';
 
 const BottomNav = () => {
-    const [isScrolling, setIsScrolling] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
     const [isDark, setIsDark] = useState(() => {
         const savedTheme = localStorage.getItem("theme");
         return savedTheme === "dark" || savedTheme === null;
     });
-
-    useEffect(() => {
-        let scrollTimeout;
-        const handleScroll = () => {
-            setIsScrolling(true);
-            clearTimeout(scrollTimeout);
-            scrollTimeout = setTimeout(() => {
-                setIsScrolling(false);
-            }, 150);
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-            clearTimeout(scrollTimeout);
-        };
-    }, []);
 
     useEffect(() => {
         const root = document.documentElement;
@@ -50,8 +32,7 @@ const BottomNav = () => {
             onMouseLeave={() => setIsHovered(false)}
         >
             <div
-                className={`flex items-center gap-4 px-6 py-3 rounded-full bg-white/80 dark:bg-black/80 backdrop-blur-md border border-black/20 dark:border-white/20 shadow-lg transition-all duration-300 ${isScrolling ? 'blur-sm opacity-70' : 'blur-0 opacity-100'
-                    } ${isHovered ? 'px-8 gap-6' : 'px-6 gap-4'
+                className={`flex items-center gap-4 px-6 py-3 rounded-full bg-white/80 dark:bg-black/80 backdrop-blur-md border border-black/20 dark:border-white/20 shadow-lg transition-all duration-300 ${isHovered ? 'px-8 gap-6' : 'px-6 gap-4'
                     }`}
             >
                 {/* Home */}
