@@ -16,17 +16,36 @@ import { FaNodeJs } from 'react-icons/fa';
 import { SiExpress } from 'react-icons/si';
 import { SiMongodb } from 'react-icons/si';
 import { FaPython } from 'react-icons/fa';
-import { FlaskConical } from 'lucide-react';
 import { FaHtml5, FaCss3Alt, FaJs, FaGitAlt } from 'react-icons/fa';
 import { SiPostman, SiVercel } from 'react-icons/si';
-import DarkThemeToggle from './DarkThemeToggle';
+import BottomNav from './BottomNav';
 
 const Connector = () => {
   const [time, setTime] = useState(new Date());
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return document.documentElement.classList.contains('dark');
+    }
+    return true; // default to dark
+  });
+
   useEffect(() => {
     const timerId = setInterval(() => setTime(new Date()), 1000);
     return () => clearInterval(timerId);
   }, []);
+
+  useEffect(() => {
+    // Watch for dark class changes
+    const observer = new MutationObserver(() => {
+      setIsDarkMode(document.documentElement.classList.contains('dark'));
+    });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+    return () => observer.disconnect();
+  }, []);
+
   const hours = time.getHours();
   const minutes = time.getMinutes();
   const location = useLocation();
@@ -40,7 +59,6 @@ const Connector = () => {
 
   return (
     <div className="overflow-x-hidden bg-white dark:bg-black bg-no-repeat bg-center bg-fixed min-h-screen transition-colors duration-300">
-      <DarkThemeToggle />
       <div className="px-4 mt-5 space-y-6">
         {/* Profile Section */}
         <div className="text-black dark:text-white flex flex-col items-center sm:flex-row sm:items-start font-roboto-mono m-auto rounded-xl p-6 w-full max-w-4xl space-y-4 sm:space-y-0 sm:space-x-6">
@@ -95,54 +113,54 @@ const Connector = () => {
         {/* Skills Section */}
         <div className="text-black dark:text-white w-full max-w-4xl mx-auto rounded-xl p-6">
           <h1 className="text-2xl font-lato font-semibold text-center sm:text-left mb-4">Skills & Tools</h1>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-            <div className="flex items-center gap-2 bg-neutral-100 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-700 rounded px-3 py-2 hover:border-black dark:hover:border-white transition">
-              <FaHtml5 className="text-[#E34F26] text-xl" />
-              <span className="text-sm">HTML</span>
+          <div className="flex flex-wrap items-center gap-2">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-black/50 dark:border-white/35 bg-white dark:bg-black shadow-sm text-sm font-semibold transition-transform hover:-translate-y-0.5">
+              <FaHtml5 className="text-[#E34F26] text-base" />
+              <span>HTML</span>
             </div>
-            <div className="flex items-center gap-2 bg-neutral-100 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-700 rounded px-3 py-2 hover:border-black dark:hover:border-white transition">
-              <FaCss3Alt className="text-[#1572B6] text-xl" />
-              <span className="text-sm">CSS</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-black/50 dark:border-white/35 bg-white dark:bg-black shadow-sm text-sm font-semibold transition-transform hover:-translate-y-0.5">
+              <FaCss3Alt className="text-[#1572B6] text-base" />
+              <span>CSS</span>
             </div>
-            <div className="flex items-center gap-2 bg-neutral-100 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-700 rounded px-3 py-2 hover:border-black dark:hover:border-white transition">
-              <FaJs className="text-[#F7DF1E] text-xl" />
-              <span className="text-sm">JavaScript</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-black/50 dark:border-white/35 bg-white dark:bg-black shadow-sm text-sm font-semibold transition-transform hover:-translate-y-0.5">
+              <FaJs className="text-[#F7DF1E] text-base" />
+              <span>JavaScript</span>
             </div>
-            <div className="flex items-center gap-2 bg-neutral-100 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-700 rounded px-3 py-2 hover:border-black dark:hover:border-white transition">
-              <FaReact className="text-[#61DAFB] text-xl" />
-              <span className="text-sm">React</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-black/50 dark:border-white/35 bg-white dark:bg-black shadow-sm text-sm font-semibold transition-transform hover:-translate-y-0.5">
+              <FaReact className="text-[#61DAFB] text-base" />
+              <span>React</span>
             </div>
-            <div className="flex items-center gap-2 bg-neutral-100 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-700 rounded px-3 py-2 hover:border-black dark:hover:border-white transition">
-              <FaNodeJs className="text-[#339933] text-xl" />
-              <span className="text-sm">Node.js</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-black/50 dark:border-white/35 bg-white dark:bg-black shadow-sm text-sm font-semibold transition-transform hover:-translate-y-0.5">
+              <FaNodeJs className="text-[#339933] text-base" />
+              <span>Node.js</span>
             </div>
-            <div className="flex items-center gap-2 bg-neutral-100 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-700 rounded px-3 py-2 hover:border-black dark:hover:border-white transition">
-              <SiExpress className="text-white text-xl" />
-              <span className="text-sm">Express</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-black/50 dark:border-white/35 bg-white dark:bg-black shadow-sm text-sm font-semibold transition-transform hover:-translate-y-0.5">
+              <SiExpress className="text-neutral-600 dark:text-white text-base" />
+              <span>Express</span>
             </div>
-            <div className="flex items-center gap-2 bg-neutral-100 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-700 rounded px-3 py-2 hover:border-black dark:hover:border-white transition">
-              <SiMongodb className="text-[#47A248] text-xl" />
-              <span className="text-sm">MongoDB</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-black/50 dark:border-white/35 bg-white dark:bg-black shadow-sm text-sm font-semibold transition-transform hover:-translate-y-0.5">
+              <SiMongodb className="text-[#47A248] text-base" />
+              <span>MongoDB</span>
             </div>
-            <div className="flex items-center gap-2 bg-neutral-100 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-700 rounded px-3 py-2 hover:border-black dark:hover:border-white transition">
-              <SiTailwindcss className="text-[#38BDF8] text-xl" />
-              <span className="text-sm">Tailwind</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-black/50 dark:border-white/35 bg-white dark:bg-black shadow-sm text-sm font-semibold transition-transform hover:-translate-y-0.5">
+              <SiTailwindcss className="text-[#38BDF8] text-base" />
+              <span>Tailwind</span>
             </div>
-            <div className="flex items-center gap-2 bg-neutral-100 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-700 rounded px-3 py-2 hover:border-black dark:hover:border-white transition">
-              <FaGitAlt className="text-[#F05032] text-xl" />
-              <span className="text-sm">Git</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-black/50 dark:border-white/35 bg-white dark:bg-black shadow-sm text-sm font-semibold transition-transform hover:-translate-y-0.5">
+              <FaGitAlt className="text-[#F05032] text-base" />
+              <span>Git</span>
             </div>
-            <div className="flex items-center gap-2 bg-neutral-100 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-700 rounded px-3 py-2 hover:border-black dark:hover:border-white transition">
-              <FaGithub className="text-white text-xl" />
-              <span className="text-sm">GitHub</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-black/50 dark:border-white/35 bg-white dark:bg-black shadow-sm text-sm font-semibold transition-transform hover:-translate-y-0.5">
+              <FaGithub className="text-black dark:text-white text-base" />
+              <span>GitHub</span>
             </div>
-            <div className="flex items-center gap-2 bg-neutral-100 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-700 rounded px-3 py-2 hover:border-black dark:hover:border-white transition">
-              <SiPostman className="text-[#FF6C37] text-xl" />
-              <span className="text-sm">Postman</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-black/50 dark:border-white/35 bg-white dark:bg-black shadow-sm text-sm font-semibold transition-transform hover:-translate-y-0.5">
+              <SiPostman className="text-[#FF6C37] text-base" />
+              <span>Postman</span>
             </div>
-            <div className="flex items-center gap-2 bg-neutral-100 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-700 rounded px-3 py-2 hover:border-black dark:hover:border-white transition">
-              <SiVercel className="text-white text-xl" />
-              <span className="text-sm">Vercel</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-black/50 dark:border-white/35 bg-white dark:bg-black shadow-sm text-sm font-semibold transition-transform hover:-translate-y-0.5">
+              <SiVercel className="text-black dark:text-white text-base" />
+              <span>Vercel</span>
             </div>
           </div>
         </div>
@@ -157,7 +175,7 @@ const Connector = () => {
               blockMargin={3}
               fontSize={14}
               weeks={20}
-              colorScheme="dark"
+              colorScheme={isDarkMode ? 'dark' : 'light'}
               style={{ maxWidth: '100%' }}
             />
           </div>
@@ -269,6 +287,9 @@ const Connector = () => {
           <span className="font-semibold text-black dark:text-white">Made with ❤️ by Siva Kumar</span>
         </div>
       </div>
+
+      {/* Bottom Navigation */}
+      <BottomNav />
     </div>
   );
 };
