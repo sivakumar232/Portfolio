@@ -11,31 +11,41 @@ const SectionNav = () => {
     ];
 
     useEffect(() => {
+        let ticking = false;
+
         const handleScroll = () => {
-            const scrollPosition = window.scrollY + 100;
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const scrollPosition = window.scrollY + 100;
 
-            for (const section of sections) {
-                const element = document.getElementById(section.id);
-                if (element) {
-                    const { offsetTop, offsetHeight } = element;
-                    if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-                        setActiveSection(section.id);
-                        break;
+                    for (const section of sections) {
+                        const element = document.getElementById(section.id);
+                        if (element) {
+                            const { offsetTop, offsetHeight } = element;
+                            if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+                                setActiveSection(section.id);
+                                break;
+                            }
+                        }
                     }
-                }
-            }
 
-            // Also check if we're in the github section and activate contact
-            const githubElement = document.getElementById('github');
-            if (githubElement) {
-                const { offsetTop, offsetHeight } = githubElement;
-                if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-                    setActiveSection('contact');
-                }
+                    // Also check if we're in the github section and activate contact
+                    const githubElement = document.getElementById('github');
+                    if (githubElement) {
+                        const { offsetTop, offsetHeight } = githubElement;
+                        if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+                            setActiveSection('contact');
+                        }
+                    }
+
+                    ticking = false;
+                });
+
+                ticking = true;
             }
         };
 
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
