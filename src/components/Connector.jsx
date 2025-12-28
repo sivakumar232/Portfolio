@@ -25,6 +25,7 @@ import SectionNav from './SectionNav';
 
 const Connector = () => {
   const [time, setTime] = useState(new Date());
+  const [showAllProjects, setShowAllProjects] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(() => {
     if (typeof window !== 'undefined') {
       return document.documentElement.classList.contains('dark');
@@ -80,14 +81,21 @@ const Connector = () => {
   };
 
   return (
-    <div className="overflow-x-hidden bg-white dark:bg-black bg-no-repeat bg-center bg-fixed min-h-screen transition-colors duration-300">
-      <div className="px-4 py-8 space-y-8 max-w-3xl mx-auto">
+    <div className="overflow-x-hidden bg-white dark:bg-black bg-no-repeat bg-center bg-fixed min-h-screen transition-colors duration-300 relative">
+      {/* Left margin line */}
+      {/* Left margin line */}
+      <div className="fixed left-0 top-0 bottom-0 border-l border-dotted border-neutral-300 dark:border-neutral-700 hidden lg:block" style={{ left: 'calc((100vw - 832px) / 2 - 4rem)' }}></div>
+
+      {/* Right margin line */}
+      <div className="fixed right-0 top-0 bottom-0 border-r border-dotted border-neutral-300 dark:border-neutral-700 hidden lg:block" style={{ right: 'calc((100vw - 832px) / 2 - 4rem)' }}></div>
+
+      <div className="px-4 py-8 space-y-8" style={{ maxWidth: '832px', margin: '0 auto' }}>
         {/* Profile Section */}
-        <div id="about" className="scroll-fade-in text-black dark:text-white flex flex-col items-center sm:flex-row sm:items-start font-roboto-mono rounded-xl p-6 space-y-4 sm:space-y-0 sm:space-x-6">
+        <div id="about" className="scroll-fade-in text-black dark:text-white flex flex-col items-center sm:flex-row sm:items-start font-roboto-mono bg-neutral-50 dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-800 rounded-xl p-6 space-y-4 sm:space-y-0 sm:space-x-6">
           <img
             src={mobImage}
             alt="Profile"
-            className="w-28 h-28 object-cover rounded-xl shadow-lg"
+            className="w-28 h-28 object-contain rounded-xl shadow-lg"
           />
           <div className="text-center sm:text-left">
             <h1 className="text-3xl sm:text-4xl font-semibold font-montserrat">Hi, I'm Siva Kumar</h1>
@@ -105,138 +113,112 @@ const Connector = () => {
         </div>
 
         {/* About Section */}
+        {/* About Section */}
         <div className="scroll-fade-in text-black dark:text-white flex flex-col font-roboto-mono rounded-xl p-6 space-y-4">
           <div>
             <h1 className="text-2xl font-lato font-semibold mb-2">About Me</h1>
             <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-              Hey! I'm <span className='text-black dark:text-white font-semibold'>Sivakumar</span>, an undergraduate computer science student and <span className='text-black dark:text-white font-semibold'>a fullstack developer</span> who loves turning ideas into reality.
+              I'm <span className='text-black dark:text-white font-semibold'>Sivakumar</span>, a developer who loves building things that are both beautiful and functional. I enjoy turning complex problems into simple, elegant solutions.
             </p>
             <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed mt-2">
-              I primarily work with <span className='text-black dark:text-white font-semibold'>React</span>, <span className='text-black dark:text-white font-semibold'>Node.js</span>, <span className='text-black dark:text-white font-semibold'>Express</span>, <span className='text-black dark:text-white font-semibold'>MongoDB</span>, and <span className='text-black dark:text-white font-semibold'>Tailwind</span>. I have experience with MySQL, but I'm flexible and quick to adapt to other technologies and stacks as needed.
-            </p>
-          </div>
-          <div>
-            <h1 className="text-2xl font-lato font-semibold mb-2">Hire Me</h1>
-            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-              I'm currently <span className='text-black dark:text-white font-semibold'>available</span> for <span className='text-black dark:text-white font-semibold'>internships</span> and <span className='text-black dark:text-white font-semibold'>freelance</span> work—ready to jump in and bring my skills to your team.
+              When I'm not coding, you'll probably find me reading <span className='text-black dark:text-white font-semibold'>philosophy</span>, listening to <span className='text-black dark:text-white font-semibold'>music</span>, or watching great <span className='text-black dark:text-white font-semibold'>movies</span>. I believe in continuous learning—or as I like to call it, <span className='text-black dark:text-white font-semibold'>Kaizen</span>.
             </p>
           </div>
         </div>
 
         {/* Projects Section */}
-        <div id="projects" className="scroll-fade-in text-black dark:text-white font-roboto-mono rounded-xl p-6">
-          <h1 className="text-2xl font-lato font-semibold text-center sm:text-left mb-6">
-            Projects
-          </h1>
+        <div id="projects" className="scroll-fade-in text-black dark:text-white rounded-xl p-6">
+          <h1 className="text-2xl font-lato font-semibold mb-6">Projects</h1>
 
-          {/* Grid container */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-            {/* Project 1: BackdropUi */}
-            <div className="group bg-white dark:bg-neutral-900 border-2 border-neutral-200 dark:border-neutral-800 rounded-xl overflow-hidden transition-all duration-300 hover:border-neutral-400 dark:hover:border-neutral-600 hover:shadow-lg dark:hover:shadow-neutral-900/50">
-              <div className="relative overflow-hidden">
-                <img
-                  src={Image1}
-                  alt="Backdrop UI"
-                  className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-              <div className="p-5">
-                {/* Card Header with Title and Links */}
-                <div className="flex justify-between items-start mb-3">
-                  <h2 className="text-xl font-bold text-black dark:text-white font-lato">BackdropUi</h2>
-                  <div className="flex gap-2">
-                    <a
-                      href="https://github.com/sivakumar232/BackdropUI"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors"
-                      aria-label="View on GitHub"
-                    >
-                      <BsGithub className="text-lg text-neutral-700 dark:text-neutral-300" />
-                    </a>
-                    <a
-                      href="https://sivakumar232.github.io/BackdropUI/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors"
-                      aria-label="View live demo"
-                    >
-                      <FaLink className="text-lg text-neutral-700 dark:text-neutral-300" />
-                    </a>
-                  </div>
+          <div className="space-y-6">
+            {/* Project 1: Bushido Quotes */}
+            <div className="group bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl overflow-hidden hover:border-neutral-400 dark:hover:border-neutral-600 transition-all">
+              <div className="flex flex-col md:flex-row">
+                <div className="md:w-2/5 overflow-hidden bg-neutral-100 dark:bg-neutral-800">
+                  <img src={Image1} alt="Bushido Quotes" className="w-full h-full object-contain" />
                 </div>
-
-                <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed mb-4">
-                  Go-to place to find background gradients, ready to use in your projects, made with Tailwind.
-                </p>
-
-                {/* Tech Stack */}
-                <div className="flex flex-wrap gap-2">
-                  <div className="flex items-center gap-1.5 bg-neutral-100 dark:bg-neutral-800 text-black dark:text-white rounded-md px-3 py-1.5 text-xs font-medium border border-neutral-200 dark:border-neutral-700">
-                    <FaReact className="text-sky-500" /> React
+                <div className="md:w-3/5 p-6 flex flex-col">
+                  <div className="flex items-start justify-between mb-3">
+                    <h2 className="text-xl font-bold text-black dark:text-white">Bushido Quotes</h2>
+                    <div className="flex gap-2">
+                      <a href="https://bushido-zeta.vercel.app/" target="_blank" rel="noopener noreferrer" className="p-1.5 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded transition-colors" title="Live">
+                        <FaLink className="text-base text-neutral-600 dark:text-neutral-400" />
+                      </a>
+                      <a href="https://github.com/sivakumar232/Bushido" target="_blank" rel="noopener noreferrer" className="p-1.5 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded transition-colors" title="GitHub">
+                        <BsGithub className="text-base text-neutral-600 dark:text-neutral-400" />
+                      </a>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-1.5 bg-neutral-100 dark:bg-neutral-800 text-black dark:text-white rounded-md px-3 py-1.5 text-xs font-medium border border-neutral-200 dark:border-neutral-700">
-                    <SiTailwindcss className="text-cyan-500" /> Tailwind
+                  <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-4">
+                    A quotes API featuring wisdom from Bushido philosophy. Supports JSON and SVG embeds for easy integration.
+                  </p>
+                  <div className="flex flex-wrap gap-2 mt-auto">
+                    <span className="px-3 py-1 text-xs bg-neutral-100 dark:bg-neutral-800 rounded-full">React</span>
+                    <span className="px-3 py-1 text-xs bg-neutral-100 dark:bg-neutral-800 rounded-full">Node.js</span>
+                    <span className="px-3 py-1 text-xs bg-neutral-100 dark:bg-neutral-800 rounded-full">Vercel</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Project 2: Sync AI */}
-            <div className="group bg-white dark:bg-neutral-900 border-2 border-neutral-200 dark:border-neutral-800 rounded-xl overflow-hidden transition-all duration-300 hover:border-neutral-400 dark:hover:border-neutral-600 hover:shadow-lg dark:hover:shadow-neutral-900/50">
-              <div className="relative overflow-hidden">
-                <img
-                  src={timetableimg}
-                  alt="Sync AI"
-                  className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-              <div className="p-5">
-                {/* Card Header with Title and Links */}
-                <div className="flex justify-between items-start mb-3">
-                  <h2 className="text-xl font-bold text-black dark:text-white font-lato">Sync AI</h2>
-                  <div className="flex gap-2">
-                    <a
-                      href="https://github.com/sivakumar232/timetable-frontend"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors"
-                      aria-label="View on GitHub"
-                    >
-                      <BsGithub className="text-lg text-neutral-700 dark:text-neutral-300" />
-                    </a>
-                  </div>
+            {/* Project 2: BackdropUi */}
+            <div className="group bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl overflow-hidden hover:border-neutral-400 dark:hover:border-neutral-600 transition-all">
+              <div className="flex flex-col md:flex-row">
+                <div className="md:w-2/5 overflow-hidden bg-neutral-100 dark:bg-neutral-800">
+                  <img src={Image1} alt="BackdropUi" className="w-full h-full object-contain" />
                 </div>
-
-                <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed mb-4">
-                  An AI-powered scheduling engine that uses a Genetic Algorithm to automatically generate optimized, clash-free timetables.
-                </p>
-
-                {/* Tech Stack */}
-                <div className="flex flex-wrap gap-2">
-                  <div className="flex items-center gap-1.5 bg-neutral-100 dark:bg-neutral-800 text-black dark:text-white rounded-md px-3 py-1.5 text-xs font-medium border border-neutral-200 dark:border-neutral-700">
-                    <FaReact className="text-sky-500" /> React
+                <div className="md:w-3/5 p-6 flex flex-col">
+                  <div className="flex items-start justify-between mb-3">
+                    <h2 className="text-xl font-bold text-black dark:text-white">BackdropUi</h2>
+                    <div className="flex gap-2">
+                      <a href="https://sivakumar232.github.io/BackdropUI/" target="_blank" rel="noopener noreferrer" className="p-1.5 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded transition-colors" title="Live">
+                        <FaLink className="text-base text-neutral-600 dark:text-neutral-400" />
+                      </a>
+                      <a href="https://github.com/sivakumar232/BackdropUI" target="_blank" rel="noopener noreferrer" className="p-1.5 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded transition-colors" title="GitHub">
+                        <BsGithub className="text-base text-neutral-600 dark:text-neutral-400" />
+                      </a>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-1.5 bg-neutral-100 dark:bg-neutral-800 text-black dark:text-white rounded-md px-3 py-1.5 text-xs font-medium border border-neutral-200 dark:border-neutral-700">
-                    <FaNodeJs className="text-green-500" /> Node
-                  </div>
-                  <div className="flex items-center gap-1.5 bg-neutral-100 dark:bg-neutral-800 text-black dark:text-white rounded-md px-3 py-1.5 text-xs font-medium border border-neutral-200 dark:border-neutral-700">
-                    <SiExpress className="text-neutral-600 dark:text-neutral-400" /> Express
-                  </div>
-                  <div className="flex items-center gap-1.5 bg-neutral-100 dark:bg-neutral-800 text-black dark:text-white rounded-md px-3 py-1.5 text-xs font-medium border border-neutral-200 dark:border-neutral-700">
-                    <SiMongodb className="text-emerald-500" /> MongoDB
-                  </div>
-                  <div className="flex items-center gap-1.5 bg-neutral-100 dark:bg-neutral-800 text-black dark:text-white rounded-md px-3 py-1.5 text-xs font-medium border border-neutral-200 dark:border-neutral-700">
-                    <FaPython className="text-blue-500" /> Python
+                  <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-4">
+                    Go-to place to find background gradients, ready to use in your projects, made with Tailwind.
+                  </p>
+                  <div className="flex flex-wrap gap-2 mt-auto">
+                    <span className="px-3 py-1 text-xs bg-neutral-100 dark:bg-neutral-800 rounded-full">React</span>
+                    <span className="px-3 py-1 text-xs bg-neutral-100 dark:bg-neutral-800 rounded-full">Tailwind CSS</span>
                   </div>
                 </div>
               </div>
             </div>
 
+            {/* Project 3: Sync AI */}
+            <div className="group bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl overflow-hidden hover:border-neutral-400 dark:hover:border-neutral-600 transition-all">
+              <div className="flex flex-col md:flex-row">
+                <div className="md:w-2/5 overflow-hidden bg-neutral-100 dark:bg-neutral-800">
+                  <img src={timetableimg} alt="Sync AI" className="w-full h-full object-contain" />
+                </div>
+                <div className="md:w-3/5 p-6 flex flex-col">
+                  <div className="flex items-start justify-between mb-3">
+                    <h2 className="text-xl font-bold text-black dark:text-white">Sync AI</h2>
+                    <div className="flex gap-2">
+                      <a href="https://github.com/sivakumar232/timetable-frontend" target="_blank" rel="noopener noreferrer" className="p-1.5 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded transition-colors" title="GitHub">
+                        <BsGithub className="text-base text-neutral-600 dark:text-neutral-400" />
+                      </a>
+                    </div>
+                  </div>
+                  <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-4">
+                    An AI-powered scheduling engine that uses a Genetic Algorithm to automatically generate optimized, clash-free timetables.
+                  </p>
+                  <div className="flex flex-wrap gap-2 mt-auto">
+                    <span className="px-3 py-1 text-xs bg-neutral-100 dark:bg-neutral-800 rounded-full">React</span>
+                    <span className="px-3 py-1 text-xs bg-neutral-100 dark:bg-neutral-800 rounded-full">Node.js</span>
+                    <span className="px-3 py-1 text-xs bg-neutral-100 dark:bg-neutral-800 rounded-full">MongoDB</span>
+                    <span className="px-3 py-1 text-xs bg-neutral-100 dark:bg-neutral-800 rounded-full">Python</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+
         </div>
 
         {/* Skills Section */}
@@ -406,6 +388,10 @@ const Connector = () => {
               weeks={17}
               colorScheme={isDarkMode ? 'dark' : 'light'}
               style={{ maxWidth: '100%' }}
+              theme={{
+                light: ['#f1f5f9', '#cbd5e1', '#94a3b8', '#64748b', '#475569'],
+                dark: ['#1e293b', '#334155', '#475569', '#64748b', '#94a3b8'],
+              }}
             />
           </div>
         </div>
@@ -473,17 +459,17 @@ const Connector = () => {
         <div className="w-full text-center border-t border-neutral-300 dark:border-neutral-700 py-4 text-sm text-neutral-600 dark:text-neutral-400">
           <span className="font-semibold text-black dark:text-white">Made with ❤️ by Siva Kumar</span>
         </div>
-      </div>
+      </div >
 
       {/* Bottom Navigation */}
-      <BottomNav />
+      < BottomNav />
 
       {/* Section Navigation */}
-      <SectionNav />
+      < SectionNav />
 
       {/* Oneko Cat Animation */}
-      <OnekoLoader />
-    </div>
+      < OnekoLoader />
+    </div >
   );
 };
 
