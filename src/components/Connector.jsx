@@ -312,153 +312,70 @@ const Connector = () => {
         <div id="skills" className="scroll-fade-in text-black dark:text-white rounded-xl p-6">
           <h1 className="text-2xl font-lato font-semibold mb-6">Skills & Tools</h1>
 
-          {/* Languages */}
-          <div className="mb-6">
-            <h3 className="text-sm font-semibold text-neutral-600 dark:text-neutral-400 mb-3">Languages</h3>
-            <div className="flex flex-wrap items-center gap-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5">
-                <FaJava className="text-[#007396] text-base" />
-                <span>Java</span>
-              </div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5">
-                <SiTypescript className="text-[#3178C6] text-base" />
-                <span>TypeScript</span>
-              </div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5">
-                <FaJs className="text-[#F7DF1E] text-base" />
-                <span>JavaScript</span>
-              </div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5">
-                <FaPython className="text-[#3776AB] text-base" />
-                <span>Python</span>
-              </div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5">
-                <FaHtml5 className="text-[#E34F26] text-base" />
-                <span>HTML</span>
-              </div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5">
-                <FaCss3Alt className="text-[#1572B6] text-base" />
-                <span>CSS</span>
-              </div>
+          <div className="flex flex-wrap items-center gap-2">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5">
+              <SiTypescript className="text-[#3178C6] text-base" />
+              <span>TypeScript</span>
             </div>
-          </div>
-
-          {/* Frontend */}
-          <div className="mb-6">
-            <h3 className="text-sm font-semibold text-neutral-600 dark:text-neutral-400 mb-3">Frontend</h3>
-            <div className="flex flex-wrap items-center gap-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5">
-                <FaReact className="text-[#61DAFB] text-base" />
-                <span>React</span>
-              </div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5">
-                <SiNextdotjs className="text-black dark:text-white text-base" />
-                <span>Next.js</span>
-              </div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5">
-                <SiAndroid className="text-[#3DDC84] text-base" />
-                <span>Android</span>
-              </div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5">
-                <SiTailwindcss className="text-[#38BDF8] text-base" />
-                <span>Tailwind</span>
-              </div>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5">
+              <FaReact className="text-[#61DAFB] text-base" />
+              <span>React.js</span>
             </div>
-          </div>
-
-          {/* Backend */}
-          <div className="mb-6">
-            <h3 className="text-sm font-semibold text-neutral-600 dark:text-neutral-400 mb-3">Backend</h3>
-            <div className="flex flex-wrap items-center gap-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5">
-                <FaNodeJs className="text-[#339933] text-base" />
-                <span>Node.js</span>
-              </div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5">
-                <SiNestjs className="text-[#E0234E] text-base" />
-                <span>NestJS</span>
-              </div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5">
-                <SiExpress className="text-neutral-600 dark:text-white text-base" />
-                <span>Express</span>
-              </div>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5">
+              <SiNextdotjs className="text-black dark:text-white text-base" />
+              <span>Next.js</span>
             </div>
-          </div>
-
-          {/* Databases & ORM */}
-          <div className="mb-6">
-            <h3 className="text-sm font-semibold text-neutral-600 dark:text-neutral-400 mb-3">Databases & ORM</h3>
-            <div className="flex flex-wrap items-center gap-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5">
-                <SiPostgresql className="text-[#4169E1] text-base" />
-                <span>PostgreSQL</span>
-              </div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5">
-                <SiMongodb className="text-[#47A248] text-base" />
-                <span>MongoDB</span>
-              </div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5">
-                <SiSupabase className="text-[#3ECF8E] text-base" />
-                <span>Supabase</span>
-              </div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5">
-                <SiPrisma className="text-[#2D3748] dark:text-white text-base" />
-                <span>Prisma</span>
-              </div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5">
-                <SiMysql className="text-[#4479A1] text-base" />
-                <span>MySQL</span>
-              </div>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5">
+              <SiTailwindcss className="text-[#38BDF8] text-base" />
+              <span>Tailwind</span>
             </div>
-          </div>
-
-          {/* DevOps & Cloud */}
-          <div className="mb-6">
-            <h3 className="text-sm font-semibold text-neutral-600 dark:text-neutral-400 mb-3">DevOps & Cloud</h3>
-            <div className="flex flex-wrap items-center gap-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5">
-                <FaAws className="text-[#FF9900] text-base" />
-                <span>AWS</span>
-              </div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5">
-                <FaDocker className="text-[#2496ED] text-base" />
-                <span>Docker</span>
-              </div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5">
-                <SiRedis className="text-[#DC382D] text-base" />
-                <span>Redis</span>
-              </div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5">
-                <SiNginx className="text-[#009639] text-base" />
-                <span>Nginx</span>
-              </div>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5">
+              <FaHtml5 className="text-[#E34F26] text-base" />
+              <span>HTML</span>
             </div>
-          </div>
-
-          {/* Tools */}
-          <div>
-            <h3 className="text-sm font-semibold text-neutral-600 dark:text-neutral-400 mb-3">Tools</h3>
-            <div className="flex flex-wrap items-center gap-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5">
-                <FaGitAlt className="text-[#F05032] text-base" />
-                <span>Git</span>
-              </div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5">
-                <FaGithub className="text-black dark:text-white text-base" />
-                <span>GitHub</span>
-              </div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5">
-                <SiPostman className="text-[#FF6C37] text-base" />
-                <span>Postman</span>
-              </div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5">
-                <VscGithubAction className="text-[#2088FF] text-base" />
-                <span>GitHub Actions</span>
-              </div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5">
-                <SiVercel className="text-black dark:text-white text-base" />
-                <span>Vercel</span>
-              </div>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5">
+              <FaCss3Alt className="text-[#1572B6] text-base" />
+              <span>CSS</span>
+            </div>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5">
+              <FaNodeJs className="text-[#339933] text-base" />
+              <span>Node.js</span>
+            </div>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5">
+              <SiExpress className="text-neutral-600 dark:text-white text-base" />
+              <span>Express</span>
+            </div>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5">
+              <SiPostgresql className="text-[#4169E1] text-base" />
+              <span>Postgres</span>
+            </div>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5">
+              <SiMongodb className="text-[#47A248] text-base" />
+              <span>MongoDB</span>
+            </div>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5">
+              <SiSupabase className="text-[#3ECF8E] text-base" />
+              <span>Supabase</span>
+            </div>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5">
+              <SiPrisma className="text-[#2D3748] dark:text-white text-base" />
+              <span>Prisma</span>
+            </div>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5">
+              <FaGitAlt className="text-[#F05032] text-base" />
+              <span>Git</span>
+            </div>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5">
+              <FaGithub className="text-black dark:text-white text-base" />
+              <span>GitHub</span>
+            </div>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5">
+              <SiPostman className="text-[#FF6C37] text-base" />
+              <span>Postman</span>
+            </div>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5">
+              <SiVercel className="text-black dark:text-white text-base" />
+              <span>Vercel</span>
             </div>
           </div>
         </div>
