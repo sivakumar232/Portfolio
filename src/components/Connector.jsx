@@ -93,10 +93,10 @@ const Connector = () => {
     <div className="overflow-x-hidden bg-white dark:bg-black bg-no-repeat bg-center bg-fixed min-h-screen transition-colors duration-300 relative bg-[radial-gradient(#d4d4d8_1px,transparent_1px)] dark:bg-[radial-gradient(#ffffff33_1px,transparent_1px)] [background-size:16px_16px]">
       {/* Left margin line */}
       {/* Left margin line */}
-      <div className="fixed left-0 top-0 bottom-0 border-l border-dotted border-neutral-300 dark:border-neutral-700 hidden lg:block" style={{ left: 'calc((100vw - 832px) / 2 - 4rem)' }}></div>
+      {/* <div className="fixed left-0 top-0 bottom-0 border-l border-dotted border-neutral-300 dark:border-neutral-700 hidden lg:block" style={{ left: 'calc((100vw - 832px) / 2 - 4rem)' }}></div> */}
 
       {/* Right margin line */}
-      <div className="fixed right-0 top-0 bottom-0 border-r border-dotted border-neutral-300 dark:border-neutral-700 hidden lg:block" style={{ right: 'calc((100vw - 832px) / 2 - 4rem)' }}></div>
+      {/* <div className="fixed right-0 top-0 bottom-0 border-r border-dotted border-neutral-300 dark:border-neutral-700 hidden lg:block" style={{ right: 'calc((100vw - 832px) / 2 - 4rem)' }}></div> */}
 
       {/* Theme Toggle - Top Right */}
       <button
