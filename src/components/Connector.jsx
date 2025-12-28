@@ -13,7 +13,7 @@ import mobImage from '../assets/mob.jpg';
 import Image1 from '../assets/image.png';
 import timetableimg from '../assets/timtable.png';
 import srkrLogo from '../assets/srkr_logo.jpg';
-import bannerImage from '../assets/banner_image.png';
+import bannerImage from '../assets/forest_banner.jpg';
 import { FaNodeJs } from 'react-icons/fa';
 import { SiExpress } from 'react-icons/si';
 import { SiMongodb } from 'react-icons/si';
@@ -156,15 +156,18 @@ const Connector = () => {
               <div>
                 <h1 className="text-3xl font-bold font-rubik-glitch mb-2 text-black dark:text-white">Siva Kumar</h1>
                 <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-4 flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                  Available for new projects
+                  Engineer
+                  <span className="w-2 h-2 rounded-full bg-black dark:bg-white animate-pulse"></span>
+                  Developer
+                  <span className="w-2 h-2 rounded-full bg-black dark:bg-white animate-pulse"></span>
+                  Builder
                 </p>
               </div>
             </div>
           </div>
 
           {/* About Section Text */}
-          <div className="text-black dark:text-white flex flex-col font-roboto-mono rounded-xl p-6 space-y-4">
+          <div className="text-black dark:text-white flex flex-col font-roboto-mono rounded-xl p-6 ">
             <div>
               <h1 className="text-2xl font-lato font-semibold mb-2">About Me</h1>
               <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
@@ -212,7 +215,7 @@ const Connector = () => {
               <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-neutral-400 dark:border-neutral-500"></div>
               <div className="flex flex-col md:flex-row">
                 <div className="md:w-2/5 overflow-hidden bg-neutral-100 dark:bg-neutral-800">
-                  <img src={Image1} alt="Bushido Quotes" className="w-full h-full object-contain" />
+                  <img src={Image1} alt="Bushido Quotes" className="w-full h-full object-cover" />
                 </div>
                 <div className="md:w-3/5 p-6 flex flex-col">
                   <div className="flex items-start justify-between mb-3">
@@ -247,7 +250,7 @@ const Connector = () => {
               <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-neutral-400 dark:border-neutral-500"></div>
               <div className="flex flex-col md:flex-row">
                 <div className="md:w-2/5 overflow-hidden bg-neutral-100 dark:bg-neutral-800">
-                  <img src={Image1} alt="BackdropUi" className="w-full h-full object-contain" />
+                  <img src={Image1} alt="BackdropUi" className="w-full h-full object-cover" />
                 </div>
                 <div className="md:w-3/5 p-6 flex flex-col">
                   <div className="flex items-start justify-between mb-3">
@@ -281,7 +284,7 @@ const Connector = () => {
               <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-neutral-400 dark:border-neutral-500"></div>
               <div className="flex flex-col md:flex-row">
                 <div className="md:w-2/5 overflow-hidden bg-neutral-100 dark:bg-neutral-800">
-                  <img src={timetableimg} alt="Sync AI" className="w-full h-full object-contain" />
+                  <img src={timetableimg} alt="Sync AI" className="w-full h-full object-cover" />
                 </div>
                 <div className="md:w-3/5 p-6 flex flex-col">
                   <div className="flex items-start justify-between mb-3">
@@ -297,15 +300,13 @@ const Connector = () => {
                   </p>
                   <div className="flex flex-wrap gap-2 mt-auto">
                     <span className="px-3 py-1 text-xs bg-neutral-100 dark:bg-neutral-800 rounded-full">React</span>
-                    <span className="px-3 py-1 text-xs bg-neutral-100 dark:bg-neutral-800 rounded-full">Node.js</span>
-                    <span className="px-3 py-1 text-xs bg-neutral-100 dark:bg-neutral-800 rounded-full">MongoDB</span>
-                    <span className="px-3 py-1 text-xs bg-neutral-100 dark:bg-neutral-800 rounded-full">Python</span>
+                    <span className="px-3 py-1 text-xs bg-neutral-100 dark:bg-neutral-800 rounded-full">Tailwind CSS</span>
+                    <span className="px-3 py-1 text-xs bg-neutral-100 dark:bg-neutral-800 rounded-full">Supabase</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
         </div>
 
         {/* Skills Section */}
@@ -460,13 +461,21 @@ const Connector = () => {
         </div>
 
         {/* Footer */}
-        <div className="w-full text-center border-t border-neutral-300 dark:border-neutral-700 py-4 text-sm text-neutral-600 dark:text-neutral-400">
-          <span className="font-semibold text-black dark:text-white">Made with ❤️ by Siva Kumar</span>
+        <div className="w-full flex justify-between items-center border-t border-neutral-300 dark:border-neutral-700 py-4 text-sm">
+          <div className="text-left">
+            <div>
+              <span className="text-neutral-500 dark:text-neutral-500">Designed and Developed by </span>
+              <span className="font-bold text-black dark:text-white">Siva Kumar</span>
+            </div>
+            <div className="text-neutral-500 dark:text-neutral-500 text-xs mt-1">
+              &copy; {new Date().getFullYear()} All rights reserved.
+            </div>
+          </div>
+          <div className="text-neutral-500 dark:text-neutral-500 font-mono">
+            {time.getHours() % 12 || 12}:{time.getMinutes().toString().padStart(2, '0')} {time.getHours() >= 12 ? 'PM' : 'AM'}
+          </div>
         </div>
       </div >
-
-      {/* Bottom Navigation */}
-      < BottomNav />
 
       {/* Section Navigation */}
       < SectionNav />
