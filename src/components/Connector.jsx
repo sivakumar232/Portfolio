@@ -91,79 +91,109 @@ const Connector = () => {
       {/* Right margin line */}
       <div className="fixed right-0 top-0 bottom-0 border-r border-dotted border-neutral-300 dark:border-neutral-700 hidden lg:block" style={{ right: 'calc((100vw - 832px) / 2 - 4rem)' }}></div>
 
+      {/* Theme Toggle - Top Right */}
+      <button
+        onClick={() => {
+          const newTheme = !isDarkMode;
+          setIsDarkMode(newTheme);
+          if (newTheme) {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+          }
+        }}
+        className="fixed top-6 right-6 z-50 p-2 rounded-full bg-white/80 dark:bg-black/80 backdrop-blur-md border border-neutral-200 dark:border-neutral-800 shadow-sm hover:scale-110 transition-all duration-200 group"
+        aria-label="Toggle theme"
+      >
+        {isDarkMode ? (
+          <div className="text-yellow-500 group-hover:rotate-90 transition-transform duration-500">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="5" /><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" /></svg>
+          </div>
+        ) : (
+          <div className="text-neutral-600 group-hover:-rotate-12 transition-transform duration-500">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" /></svg>
+          </div>
+        )}
+      </button>
+
       <div className="px-4 py-8 space-y-8" style={{ maxWidth: '832px', margin: '0 auto' }}>
-        {/* Profile Header Section with Overlapping Banner */}
-        <div className="scroll-fade-in relative mb-8 rounded-xl overflow-hidden">
-          {/* Banner Image */}
-          <div className="h-32 sm:h-48 w-full bg-neutral-200 dark:bg-neutral-800 overflow-hidden">
-            <img src={bannerImage} alt="Cover" className="w-full h-full object-cover" />
-          </div>
-
-          <div className="px-6 pb-6 relative">
-            {/* Profile Image - Overlapping */}
-            <div className="-mt-12 sm:-mt-16 mb-4 flex justify-between items-end">
-              <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full border-4 border-neutral-50 dark:border-neutral-900 overflow-hidden bg-white dark:bg-black shadow-sm">
-                <img src={mobImage} alt="Profile" className="w-full h-full object-cover" />
-              </div>
-
-              {/* Social Links (Restored) */}
-              <div className="flex gap-2 mb-1">
-                <a href="https://github.com/sivakumar232" target="_blank" rel="noopener noreferrer" className="p-2 bg-white dark:bg-neutral-800 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors border border-neutral-200 dark:border-neutral-700 group">
-                  <FaGithub className="text-xl text-neutral-700 dark:text-neutral-200 group-hover:text-black dark:group-hover:text-white transition-colors" />
-                </a>
-                <a href="https://linkedin.com/in/sivakumar-r-3105" target="_blank" rel="noopener noreferrer" className="p-2 bg-white dark:bg-neutral-800 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors border border-neutral-200 dark:border-neutral-700 group">
-                  <FaLinkedin className="text-xl text-[#0077b5] dark:text-[#0a66c2]" />
-                </a>
-                <a href="https://x.com/sivakumarr3105" target="_blank" rel="noopener noreferrer" className="p-2 bg-white dark:bg-neutral-800 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors border border-neutral-200 dark:border-neutral-700 group">
-                  <FaXTwitter className="text-xl text-black dark:text-white" />
-                </a>
-                <a href="https://leetcode.com/u/sivakumar3105/" target="_blank" rel="noopener noreferrer" className="p-2 bg-white dark:bg-neutral-800 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors border border-neutral-200 dark:border-neutral-700 group">
-                  <SiLeetcode className="text-xl text-[#fea116]" />
-                </a>
-              </div>
+        {/* About Section Group (Profile + Bio + Education) */}
+        <div id="about" className="scroll-fade-in no-translate">
+          {/* Profile Header Section with Overlapping Banner */}
+          <div className="relative mb-8 rounded-xl overflow-hidden">
+            {/* Banner Image */}
+            <div className="h-32 sm:h-48 w-full bg-neutral-200 dark:bg-neutral-800 overflow-hidden">
+              <img src={bannerImage} alt="Cover" className="w-full h-full object-cover" />
             </div>
 
-            {/* Profile Info (Restored) */}
+            <div className="px-6 pb-6 relative">
+              {/* Profile Image - Overlapping */}
+              <div className="-mt-12 sm:-mt-16 mb-4 flex justify-between items-end">
+                <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full border-4 border-neutral-50 dark:border-neutral-900 overflow-hidden bg-white dark:bg-black shadow-sm">
+                  <img src={mobImage} alt="Profile" className="w-full h-full object-cover" />
+                </div>
+
+                {/* Social Links (Restored) */}
+                <div className="flex gap-2 mb-1">
+                  <a href="https://github.com/sivakumar232" target="_blank" rel="noopener noreferrer" className="p-2 bg-white dark:bg-neutral-800 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors border border-neutral-200 dark:border-neutral-700 group">
+                    <FaGithub className="text-xl text-neutral-700 dark:text-neutral-200 group-hover:text-black dark:group-hover:text-white transition-colors" />
+                  </a>
+                  <a href="https://linkedin.com/in/sivakumar-r-3105" target="_blank" rel="noopener noreferrer" className="p-2 bg-white dark:bg-neutral-800 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors border border-neutral-200 dark:border-neutral-700 group">
+                    <FaLinkedin className="text-xl text-[#0077b5] dark:text-[#0a66c2]" />
+                  </a>
+                  <a href="https://x.com/sivakumarr3105" target="_blank" rel="noopener noreferrer" className="p-2 bg-white dark:bg-neutral-800 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors border border-neutral-200 dark:border-neutral-700 group">
+                    <FaXTwitter className="text-xl text-black dark:text-white" />
+                  </a>
+                  <a href="https://leetcode.com/u/sivakumar3105/" target="_blank" rel="noopener noreferrer" className="p-2 bg-white dark:bg-neutral-800 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors border border-neutral-200 dark:border-neutral-700 group">
+                    <SiLeetcode className="text-xl text-[#fea116]" />
+                  </a>
+                </div>
+              </div>
+
+              {/* Profile Info (Restored) */}
+              <div>
+                <h1 className="text-3xl font-bold font-rubik-glitch mb-2 text-black dark:text-white">Siva Kumar</h1>
+                <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-4 flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                  Available for new projects
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* About Section Text */}
+          <div className="text-black dark:text-white flex flex-col font-roboto-mono rounded-xl p-6 space-y-4">
             <div>
-              <h1 className="text-3xl font-bold font-rubik-glitch mb-2 text-black dark:text-white">Siva Kumar</h1>
-              <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-4 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                Available for new projects
+              <h1 className="text-2xl font-lato font-semibold mb-2">About Me</h1>
+              <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                I'm <span className='text-black dark:text-white font-semibold'>Sivakumar</span>, a developer who loves building things that are both beautiful and functional. I enjoy turning complex problems into simple, elegant solutions.
+              </p>
+              <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed mt-2">
+                When I'm not coding, you'll probably find me reading <span className='text-black dark:text-white font-semibold'>philosophy</span>, listening to <span className='text-black dark:text-white font-semibold'>music</span>, or watching great <span className='text-black dark:text-white font-semibold'>movies</span>. I believe in continuous learning—or as I like to call it, <span className='text-black dark:text-white font-semibold'>Kaizen</span>.
               </p>
             </div>
           </div>
-        </div>
 
-        {/* About Section (Restored) */}
-        <div className="scroll-fade-in text-black dark:text-white flex flex-col font-roboto-mono rounded-xl p-6 space-y-4">
-          <div>
-            <h1 className="text-2xl font-lato font-semibold mb-2">About Me</h1>
-            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-              I'm <span className='text-black dark:text-white font-semibold'>Sivakumar</span>, a developer who loves building things that are both beautiful and functional. I enjoy turning complex problems into simple, elegant solutions.
-            </p>
-            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed mt-2">
-              When I'm not coding, you'll probably find me reading <span className='text-black dark:text-white font-semibold'>philosophy</span>, listening to <span className='text-black dark:text-white font-semibold'>music</span>, or watching great <span className='text-black dark:text-white font-semibold'>movies</span>. I believe in continuous learning—or as I like to call it, <span className='text-black dark:text-white font-semibold'>Kaizen</span>.
-            </p>
-          </div>
-        </div>
-
-        {/* Education Section */}
-        <div className="scroll-fade-in text-black dark:text-white font-roboto-mono rounded-xl p-6 mb-8">
-          <h1 className="text-2xl font-lato font-semibold mb-6">Education</h1>
-          <div className="flex items-start gap-3 group">
-            <div className="w-10 h-10 shrink-0 border border-neutral-200 dark:border-neutral-800 rounded-sm overflow-hidden">
-              <img src={srkrLogo} alt="SRKR Engineering College" className="w-full h-full object-cover" />
-            </div>
-            <div className="flex flex-col w-full">
-              <div className="flex justify-between items-start">
-                <h2 className="text-sm font-bold text-black dark:text-white hover:underline transition-colors">
-                  Sagi Ramakrishnam Raju Engineering College
-                </h2>
-                <span className="text-xs text-neutral-500 dark:text-neutral-500 whitespace-nowrap ml-4">2023 — 2027</span>
+          {/* Education Section */}
+          <div className="text-black dark:text-white font-roboto-mono rounded-xl p-6 mb-8">
+            <h1 className="text-2xl font-lato font-semibold mb-6">Education</h1>
+            <div className="flex items-start gap-3 group">
+              <div className="w-10 h-10 shrink-0 border border-neutral-200 dark:border-neutral-800 rounded-sm overflow-hidden">
+                <img src={srkrLogo} alt="SRKR Engineering College" className="w-full h-full object-cover" />
               </div>
-              <p className="text-sm text-neutral-500 dark:text-neutral-500">
-                Artificial Intelligence and Machine Learning
-              </p>
+              <div className="flex flex-col w-full">
+                <div className="flex justify-between items-start">
+                  <h2 className="text-sm font-bold text-black dark:text-white hover:underline transition-colors">
+                    Sagi Ramakrishnam Raju Engineering College
+                  </h2>
+                  <span className="text-xs text-neutral-500 dark:text-neutral-500 whitespace-nowrap ml-4">2023 — 2027</span>
+                </div>
+                <p className="text-sm text-neutral-500 dark:text-neutral-500">
+                  Artificial Intelligence and Machine Learning
+                </p>
+              </div>
             </div>
           </div>
         </div>

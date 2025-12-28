@@ -88,10 +88,10 @@ const BottomNav = () => {
                 </a>
 
                 {/* Separator */}
-                <div className="h-6 w-px bg-black/20 dark:bg-white/20"></div>
+                {/* <div className="h-6 w-px bg-black/20 dark:bg-white/20"></div> */}
 
-                {/* Theme Toggle */}
-                <button
+                {/* Theme Toggle (Removed) */}
+                {/* <button
                     onClick={toggleTheme}
                     className="flex items-center justify-center w-8 h-8 rounded-full hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-200 hover:scale-110"
                     aria-label="Toggle theme"
@@ -101,7 +101,7 @@ const BottomNav = () => {
                     ) : (
                         <Moon className="w-5 h-5 text-black dark:text-white" />
                     )}
-                </button>
+                </button> */}
             </div>
         </nav>
     );

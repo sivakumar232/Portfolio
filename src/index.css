@@ -42,12 +42,16 @@
 /* Scroll-triggered animation classes - Dramatic top-to-bottom reveal */
 .scroll-fade-in {
   opacity: 0;
-  transform: translateY(-30px);
+  transform: translateY(30px);
   filter: blur(2px);
   transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
     transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
     filter 1.2s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity, filter;
+}
+
+.scroll-fade-in.no-translate {
+  transform: translateY(0);
 }
 
 .scroll-fade-in.visible {
