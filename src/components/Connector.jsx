@@ -12,6 +12,8 @@ import { useState, useEffect } from 'react';
 import mobImage from '../assets/mob.jpg';
 import Image1 from '../assets/image.png';
 import timetableimg from '../assets/timtable.png';
+import srkrLogo from '../assets/srkr_logo.jpg';
+import bannerImage from '../assets/banner_image.png';
 import { FaNodeJs } from 'react-icons/fa';
 import { SiExpress } from 'react-icons/si';
 import { SiMongodb } from 'react-icons/si';
@@ -81,7 +83,7 @@ const Connector = () => {
   };
 
   return (
-    <div className="overflow-x-hidden bg-white dark:bg-black bg-no-repeat bg-center bg-fixed min-h-screen transition-colors duration-300 relative">
+    <div className="overflow-x-hidden bg-white dark:bg-black bg-no-repeat bg-center bg-fixed min-h-screen transition-colors duration-300 relative bg-[radial-gradient(#d4d4d8_1px,transparent_1px)] dark:bg-[radial-gradient(#ffffff33_1px,transparent_1px)] [background-size:16px_16px]">
       {/* Left margin line */}
       {/* Left margin line */}
       <div className="fixed left-0 top-0 bottom-0 border-l border-dotted border-neutral-300 dark:border-neutral-700 hidden lg:block" style={{ left: 'calc((100vw - 832px) / 2 - 4rem)' }}></div>
@@ -90,30 +92,49 @@ const Connector = () => {
       <div className="fixed right-0 top-0 bottom-0 border-r border-dotted border-neutral-300 dark:border-neutral-700 hidden lg:block" style={{ right: 'calc((100vw - 832px) / 2 - 4rem)' }}></div>
 
       <div className="px-4 py-8 space-y-8" style={{ maxWidth: '832px', margin: '0 auto' }}>
-        {/* Profile Section */}
-        <div id="about" className="scroll-fade-in text-black dark:text-white flex flex-col items-center sm:flex-row sm:items-start font-roboto-mono bg-neutral-50 dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-800 rounded-xl p-6 space-y-4 sm:space-y-0 sm:space-x-6">
-          <img
-            src={mobImage}
-            alt="Profile"
-            className="w-28 h-28 object-contain rounded-xl shadow-lg"
-          />
-          <div className="text-center sm:text-left">
-            <h1 className="text-3xl sm:text-4xl font-semibold font-montserrat">Hi, I'm Siva Kumar</h1>
-            <p className="text-base font-lato mb-2 text-neutral-700 dark:text-neutral-300">Web Developer</p>
-            <div className="flex justify-center sm:justify-start items-center space-x-3 mt-1">
-              <div className='border flex space-x-1 rounded-md px-2 py-1 border-black dark:border-white'>
-                <span className='blink_me relative top-1.5'></span>
-                <p className='text-xs text-black dark:text-white'>Available</p>
+        {/* Profile Header Section with Overlapping Banner */}
+        <div className="scroll-fade-in relative mb-8 rounded-xl overflow-hidden">
+          {/* Banner Image */}
+          <div className="h-32 sm:h-48 w-full bg-neutral-200 dark:bg-neutral-800 overflow-hidden">
+            <img src={bannerImage} alt="Cover" className="w-full h-full object-cover" />
+          </div>
+
+          <div className="px-6 pb-6 relative">
+            {/* Profile Image - Overlapping */}
+            <div className="-mt-12 sm:-mt-16 mb-4 flex justify-between items-end">
+              <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full border-4 border-neutral-50 dark:border-neutral-900 overflow-hidden bg-white dark:bg-black shadow-sm">
+                <img src={mobImage} alt="Profile" className="w-full h-full object-cover" />
               </div>
-              <div className='text-neutral-600 dark:text-neutral-400'>
-                <p className='text-xs'>{`${hours % 12 === 0 ? 12 : String(hours % 12).padStart(2, '0')}:${String(minutes).padStart(2, '0')} ${ampm}`}</p>
+
+              {/* Social Links (Restored) */}
+              <div className="flex gap-2 mb-1">
+                <a href="https://github.com/sivakumar232" target="_blank" rel="noopener noreferrer" className="p-2 bg-white dark:bg-neutral-800 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors border border-neutral-200 dark:border-neutral-700 group">
+                  <FaGithub className="text-xl text-neutral-700 dark:text-neutral-200 group-hover:text-black dark:group-hover:text-white transition-colors" />
+                </a>
+                <a href="https://linkedin.com/in/sivakumar-r-3105" target="_blank" rel="noopener noreferrer" className="p-2 bg-white dark:bg-neutral-800 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors border border-neutral-200 dark:border-neutral-700 group">
+                  <FaLinkedin className="text-xl text-[#0077b5] dark:text-[#0a66c2]" />
+                </a>
+                <a href="https://x.com/sivakumarr3105" target="_blank" rel="noopener noreferrer" className="p-2 bg-white dark:bg-neutral-800 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors border border-neutral-200 dark:border-neutral-700 group">
+                  <FaXTwitter className="text-xl text-black dark:text-white" />
+                </a>
+                <a href="https://leetcode.com/u/sivakumar3105/" target="_blank" rel="noopener noreferrer" className="p-2 bg-white dark:bg-neutral-800 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors border border-neutral-200 dark:border-neutral-700 group">
+                  <SiLeetcode className="text-xl text-[#fea116]" />
+                </a>
               </div>
+            </div>
+
+            {/* Profile Info (Restored) */}
+            <div>
+              <h1 className="text-3xl font-bold font-rubik-glitch mb-2 text-black dark:text-white">Siva Kumar</h1>
+              <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-4 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                Available for new projects
+              </p>
             </div>
           </div>
         </div>
 
-        {/* About Section */}
-        {/* About Section */}
+        {/* About Section (Restored) */}
         <div className="scroll-fade-in text-black dark:text-white flex flex-col font-roboto-mono rounded-xl p-6 space-y-4">
           <div>
             <h1 className="text-2xl font-lato font-semibold mb-2">About Me</h1>
@@ -126,13 +147,39 @@ const Connector = () => {
           </div>
         </div>
 
+        {/* Education Section */}
+        <div className="scroll-fade-in text-black dark:text-white font-roboto-mono rounded-xl p-6 mb-8">
+          <h1 className="text-2xl font-lato font-semibold mb-6">Education</h1>
+          <div className="flex items-start gap-3 group">
+            <div className="w-10 h-10 shrink-0 border border-neutral-200 dark:border-neutral-800 rounded-sm overflow-hidden">
+              <img src={srkrLogo} alt="SRKR Engineering College" className="w-full h-full object-cover" />
+            </div>
+            <div className="flex flex-col w-full">
+              <div className="flex justify-between items-start">
+                <h2 className="text-sm font-bold text-black dark:text-white hover:underline transition-colors">
+                  Sagi Ramakrishnam Raju Engineering College
+                </h2>
+                <span className="text-xs text-neutral-500 dark:text-neutral-500 whitespace-nowrap ml-4">2023 — 2027</span>
+              </div>
+              <p className="text-sm text-neutral-500 dark:text-neutral-500">
+                Artificial Intelligence and Machine Learning
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Projects Section */}
-        <div id="projects" className="scroll-fade-in text-black dark:text-white rounded-xl p-6">
+        <div id="projects" className="text-black dark:text-white rounded-xl p-6">
           <h1 className="text-2xl font-lato font-semibold mb-6">Projects</h1>
 
           <div className="space-y-6">
             {/* Project 1: Bushido Quotes */}
-            <div className="group bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl overflow-hidden hover:border-neutral-400 dark:hover:border-neutral-600 transition-all">
+            <div className="scroll-fade-in group bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded overflow-hidden hover:border-neutral-400 dark:hover:border-neutral-600 transition-all relative">
+              {/* Corner Accents - Permanent */}
+              <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-neutral-400 dark:border-neutral-500"></div>
+              <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-neutral-400 dark:border-neutral-500"></div>
+              <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-neutral-400 dark:border-neutral-500"></div>
+              <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-neutral-400 dark:border-neutral-500"></div>
               <div className="flex flex-col md:flex-row">
                 <div className="md:w-2/5 overflow-hidden bg-neutral-100 dark:bg-neutral-800">
                   <img src={Image1} alt="Bushido Quotes" className="w-full h-full object-contain" />
@@ -162,7 +209,12 @@ const Connector = () => {
             </div>
 
             {/* Project 2: BackdropUi */}
-            <div className="group bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl overflow-hidden hover:border-neutral-400 dark:hover:border-neutral-600 transition-all">
+            <div className="scroll-fade-in group bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded overflow-hidden hover:border-neutral-400 dark:hover:border-neutral-600 transition-all relative">
+              {/* Corner Accents - Permanent */}
+              <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-neutral-400 dark:border-neutral-500"></div>
+              <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-neutral-400 dark:border-neutral-500"></div>
+              <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-neutral-400 dark:border-neutral-500"></div>
+              <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-neutral-400 dark:border-neutral-500"></div>
               <div className="flex flex-col md:flex-row">
                 <div className="md:w-2/5 overflow-hidden bg-neutral-100 dark:bg-neutral-800">
                   <img src={Image1} alt="BackdropUi" className="w-full h-full object-contain" />
@@ -191,7 +243,12 @@ const Connector = () => {
             </div>
 
             {/* Project 3: Sync AI */}
-            <div className="group bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl overflow-hidden hover:border-neutral-400 dark:hover:border-neutral-600 transition-all">
+            <div className="scroll-fade-in group bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded overflow-hidden hover:border-neutral-400 dark:hover:border-neutral-600 transition-all relative">
+              {/* Corner Accents - Permanent */}
+              <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-neutral-400 dark:border-neutral-500"></div>
+              <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-neutral-400 dark:border-neutral-500"></div>
+              <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-neutral-400 dark:border-neutral-500"></div>
+              <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-neutral-400 dark:border-neutral-500"></div>
               <div className="flex flex-col md:flex-row">
                 <div className="md:w-2/5 overflow-hidden bg-neutral-100 dark:bg-neutral-800">
                   <img src={timetableimg} alt="Sync AI" className="w-full h-full object-contain" />
