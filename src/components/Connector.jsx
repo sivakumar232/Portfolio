@@ -19,6 +19,7 @@ import { FaPython } from 'react-icons/fa';
 import { FaHtml5, FaCss3Alt, FaJs, FaGitAlt } from 'react-icons/fa';
 import { SiPostman, SiVercel } from 'react-icons/si';
 import BottomNav from './BottomNav';
+import OnekoLoader from './Onekoloader';
 
 const Connector = () => {
   const [time, setTime] = useState(new Date());
@@ -298,6 +299,9 @@ const Connector = () => {
 
       {/* Bottom Navigation */}
       <BottomNav />
+
+      {/* Oneko Cat Animation */}
+      <OnekoLoader />
     </div>
   );
 };
