@@ -13,7 +13,8 @@ import mobImage from '../assets/mob.jpg';
 import Image1 from '../assets/image.png';
 import timetableimg from '../assets/timtable.png';
 import srkrLogo from '../assets/srkr_logo.jpg';
-import bannerImage from '../assets/forest_banner.jpg';
+import darkBannerImage from '../assets/forest_banner.jpg';
+import lightBannerImage from '../assets/light_banner.jpg';
 import whoamiBanner from '../assets/whoami_full.jpg';
 import bushidoBanner from '../assets/bushido_full.png';
 
@@ -166,7 +167,7 @@ const Connector = () => {
           <div className="relative mb-8 rounded-xl overflow-hidden">
             {/* Banner Image */}
             <div className="h-32 sm:h-48 w-full bg-neutral-200 dark:bg-neutral-800 overflow-hidden">
-              <img src={bannerImage} alt="Cover" className="w-full h-full object-cover" />
+              <img src={isDarkMode ? darkBannerImage : lightBannerImage} alt="Cover" className="w-full h-full object-cover" />
             </div>
 
             <div className="px-6 pb-6 relative">
