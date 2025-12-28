@@ -144,7 +144,7 @@ const Connector = () => {
                 ],
               },
               {
-                duration: 500,
+                duration: 1000,
                 easing: 'ease-in-out',
                 pseudoElement: '::view-transition-new(root)',
               }
@@ -172,14 +172,14 @@ const Connector = () => {
           <div className="relative mb-8 rounded-xl overflow-hidden">
             {/* Banner Image */}
             <div className="h-32 sm:h-48 w-full bg-neutral-200 dark:bg-neutral-800 overflow-hidden">
-              <img src={isDarkMode ? darkBannerImage : lightBannerImage} alt="Cover" className="w-full h-full object-cover" />
+              <img src={isDarkMode ? darkBannerImage : lightBannerImage} alt="Cover" className="w-full h-full object-cover" loading="eager" />
             </div>
 
             <div className="px-6 pb-6 relative">
               {/* Profile Image - Overlapping */}
               <div className="-mt-12 sm:-mt-16 mb-4 flex justify-between items-end">
                 <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full border-4 border-neutral-50 dark:border-neutral-900 overflow-hidden bg-white dark:bg-black shadow-sm">
-                  <img src={mobImage} alt="Profile" className="w-full h-full object-cover" />
+                  <img src={mobImage} alt="Profile" className="w-full h-full object-cover" loading="eager" />
                 </div>
 
                 {/* Social Links (Restored) */}
@@ -262,7 +262,7 @@ const Connector = () => {
               <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-neutral-400 dark:border-neutral-500"></div>
               <div className="flex flex-col md:flex-row">
                 <div className="md:w-2/5 overflow-hidden bg-neutral-100 dark:bg-neutral-800">
-                  <img src={whoamiBanner} alt="whoami" className="w-full h-full object-cover" />
+                  <img src={whoamiBanner} alt="whoami" className="w-full h-full object-cover" loading="lazy" />
                 </div>
                 <div className="md:w-3/5 p-6 flex flex-col">
                   <div className="flex items-start justify-between mb-3">
@@ -295,7 +295,7 @@ const Connector = () => {
               <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-neutral-400 dark:border-neutral-500"></div>
               <div className="flex flex-col md:flex-row">
                 <div className="md:w-2/5 overflow-hidden bg-neutral-100 dark:bg-neutral-800">
-                  <img src={bushidoBanner} alt="Bushido Quotes" className="w-full h-full object-cover" />
+                  <img src={bushidoBanner} alt="Bushido Quotes" className="w-full h-full object-cover" loading="lazy" />
                 </div>
                 <div className="md:w-3/5 p-6 flex flex-col">
                   <div className="flex items-start justify-between mb-3">
@@ -330,7 +330,7 @@ const Connector = () => {
               <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-neutral-400 dark:border-neutral-500"></div>
               <div className="flex flex-col md:flex-row">
                 <div className="md:w-2/5 overflow-hidden bg-neutral-100 dark:bg-neutral-800">
-                  <img src={Image1} alt="BackdropUi" className="w-full h-full object-cover" />
+                  <img src={Image1} alt="BackdropUi" className="w-full h-full object-cover" loading="lazy" />
                 </div>
                 <div className="md:w-3/5 p-6 flex flex-col">
                   <div className="flex items-start justify-between mb-3">
@@ -364,7 +364,7 @@ const Connector = () => {
               <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-neutral-400 dark:border-neutral-500"></div>
               <div className="flex flex-col md:flex-row">
                 <div className="md:w-2/5 overflow-hidden bg-neutral-100 dark:bg-neutral-800">
-                  <img src={timetableimg} alt="Sync AI" className="w-full h-full object-cover" />
+                  <img src={timetableimg} alt="Sync AI" className="w-full h-full object-cover" loading="lazy" />
                 </div>
                 <div className="md:w-3/5 p-6 flex flex-col">
                   <div className="flex items-start justify-between mb-3">
