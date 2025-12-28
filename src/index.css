@@ -325,3 +325,48 @@ canvas {
   pointer-events: none;
   z-index: 9999;
 }
+
+/* Hide scrollbar in GitHub Calendar by default, show on hover */
+.react-activity-calendar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-x: auto;
+}
+
+.react-activity-calendar::-webkit-scrollbar {
+  height: 6px;
+}
+
+.react-activity-calendar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.react-activity-calendar::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 3px;
+}
+
+.react-activity-calendar:hover {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+}
+
+.dark .react-activity-calendar:hover {
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+.react-activity-calendar:hover::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.dark .react-activity-calendar:hover::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.react-activity-calendar:hover::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.dark .react-activity-calendar:hover::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
