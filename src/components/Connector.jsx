@@ -30,6 +30,7 @@ import { VscGithubAction } from 'react-icons/vsc';
 import BottomNav from './BottomNav';
 import OnekoLoader from './Onekoloader';
 import SectionNav from './SectionNav';
+import VisitorCounter from './VisitorCounter';
 
 const Connector = () => {
   const [time, setTime] = useState(new Date());
@@ -211,10 +212,10 @@ const Connector = () => {
             <div>
               <h1 className="text-2xl font-lato font-semibold mb-2">About Me</h1>
               <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-                I'm <span className='text-black dark:text-white font-semibold'>Sivakumar</span>, a developer who loves building things that are both beautiful and functional. I enjoy turning complex problems into simple, elegant solutions.
+                A full stack engineer from India, currently learning about backend technologies and building interactive user interfaces.
               </p>
               <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed mt-2">
-                When I'm not coding, you'll probably find me reading <span className='text-black dark:text-white font-semibold'>philosophy</span>, listening to <span className='text-black dark:text-white font-semibold'>music</span>, or watching great <span className='text-black dark:text-white font-semibold'>movies</span>. I believe in continuous learning—or as I like to call it, <span className='text-black dark:text-white font-semibold'>Kaizen</span>.
+                Most of my time goes into working on personal projects. If you're looking to collaborate or need help with something, feel free to reach out.
               </p>
             </div>
           </div>
@@ -271,7 +272,7 @@ const Connector = () => {
                     A multi-user portfolio platform featuring Clerk authentication, dynamic username routing, and ownership detection. Built for scalability.
                   </p>
                   <div className="flex flex-wrap gap-2 mt-auto">
-                    <span className="px-3 py-1 text-xs bg-neutral-100 dark:bg-neutral-800 rounded-full">Next.js 16</span>
+                    <span className="px-3 py-1 text-xs bg-neutral-100 dark:bg-neutral-800 rounded-full">Next.js</span>
                     <span className="px-3 py-1 text-xs bg-neutral-100 dark:bg-neutral-800 rounded-full">Clerk</span>
                     <span className="px-3 py-1 text-xs bg-neutral-100 dark:bg-neutral-800 rounded-full">Prisma</span>
                     <span className="px-3 py-1 text-xs bg-neutral-100 dark:bg-neutral-800 rounded-full">PostgreSQL</span>
@@ -482,6 +483,19 @@ const Connector = () => {
             I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Feel free to reach out!
           </p>
 
+          {/* Cal.com Meeting Scheduler */}
+          <a
+            href="https://cal.com/siva-kumar-vdv1fl/15min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 mb-6 bg-black dark:bg-white text-white dark:text-black font-semibold rounded-lg hover:bg-neutral-800 dark:hover:bg-neutral-200 transition-colors"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            Schedule a 15-min Meeting
+          </a>
+
           {/* Contact Methods */}
           <div className="space-y-4">
             {/* Email */}
@@ -501,34 +515,28 @@ const Connector = () => {
             </a>
 
             {/* Social Links */}
-            <div className="flex gap-3 pt-2">
-              <a
-                href="https://github.com/sivakumar232"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors"
-                aria-label="GitHub"
-              >
-                <FaGithub className="text-xl text-black dark:text-white" />
-              </a>
-              <a
-                href="https://leetcode.com/u/sivakumarrrrrr2005"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors"
-                aria-label="LeetCode"
-              >
-                <SiLeetcode className="text-xl text-black dark:text-white" />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/sivakumarvemuri"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors"
-                aria-label="LinkedIn"
-              >
-                <FaLinkedin className="text-xl text-black dark:text-white" />
-              </a>
+            <div>
+              <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-3">You can also contact me through:</p>
+              <div className="flex gap-3">
+                <a
+                  href="https://www.linkedin.com/in/sivakumarvemuri"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors"
+                  aria-label="LinkedIn"
+                >
+                  <FaLinkedin className="text-xl text-black dark:text-white" />
+                </a>
+                <a
+                  href="https://x.com/sivakumarr3105"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors"
+                  aria-label="Twitter"
+                >
+                  <FaXTwitter className="text-xl text-black dark:text-white" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -544,8 +552,13 @@ const Connector = () => {
               &copy; {new Date().getFullYear()} All rights reserved.
             </div>
           </div>
-          <div className="text-neutral-500 dark:text-neutral-500 font-mono">
-            {time.getHours() % 12 || 12}:{time.getMinutes().toString().padStart(2, '0')} {time.getHours() >= 12 ? 'PM' : 'AM'}
+          <div className="flex flex-col items-end gap-1">
+            <div className="text-neutral-500 dark:text-neutral-500 font-mono">
+              <VisitorCounter />
+            </div>
+            <div className="text-neutral-500 dark:text-neutral-500 font-mono">
+              {time.getHours() % 12 || 12}:{time.getMinutes().toString().padStart(2, '0')} {time.getHours() >= 12 ? 'PM' : 'AM'}
+            </div>
           </div>
         </div>
       </div >
