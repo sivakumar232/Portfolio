@@ -374,3 +374,10 @@ canvas {
 .dark .react-activity-calendar:hover::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.5);
 }
+
+/* Disable default cross-fade for View Transitions */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}

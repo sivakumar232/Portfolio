@@ -14,6 +14,12 @@ import Image1 from '../assets/image.png';
 import timetableimg from '../assets/timtable.png';
 import srkrLogo from '../assets/srkr_logo.jpg';
 import bannerImage from '../assets/forest_banner.jpg';
+import whoamiBanner from '../assets/whoami_full.jpg';
+import bushidoBanner from '../assets/bushido_full.png';
+
+
+
+
 import { FaNodeJs } from 'react-icons/fa';
 import { SiExpress } from 'react-icons/si';
 import { SiMongodb } from 'react-icons/si';
@@ -93,16 +99,50 @@ const Connector = () => {
 
       {/* Theme Toggle - Top Right */}
       <button
-        onClick={() => {
-          const newTheme = !isDarkMode;
-          setIsDarkMode(newTheme);
-          if (newTheme) {
-            document.documentElement.classList.add('dark');
-            localStorage.setItem('theme', 'dark');
-          } else {
-            document.documentElement.classList.remove('dark');
-            localStorage.setItem('theme', 'light');
+        onClick={(e) => {
+          const toggleTheme = () => {
+            const newTheme = !isDarkMode;
+            setIsDarkMode(newTheme);
+            if (newTheme) {
+              document.documentElement.classList.add('dark');
+              localStorage.setItem('theme', 'dark');
+            } else {
+              document.documentElement.classList.remove('dark');
+              localStorage.setItem('theme', 'light');
+            }
+          };
+
+          if (!document.startViewTransition) {
+            toggleTheme();
+            return;
           }
+
+          const x = e.clientX;
+          const y = e.clientY;
+          const endRadius = Math.hypot(
+            Math.max(x, window.innerWidth - x),
+            Math.max(y, window.innerHeight - y)
+          );
+
+          const transition = document.startViewTransition(() => {
+            toggleTheme();
+          });
+
+          transition.ready.then(() => {
+            document.documentElement.animate(
+              {
+                clipPath: [
+                  `circle(0px at ${x}px ${y}px)`,
+                  `circle(${endRadius}px at ${x}px ${y}px)`,
+                ],
+              },
+              {
+                duration: 500,
+                easing: 'ease-in-out',
+                pseudoElement: '::view-transition-new(root)',
+              }
+            );
+          });
         }}
         className="fixed top-6 right-6 z-50 p-2 rounded-full bg-white/80 dark:bg-black/80 backdrop-blur-md border border-neutral-200 dark:border-neutral-800 shadow-sm hover:scale-110 transition-all duration-200 group"
         aria-label="Toggle theme"
@@ -155,7 +195,7 @@ const Connector = () => {
               {/* Profile Info (Restored) */}
               <div>
                 <h1 className="text-3xl font-bold font-rubik-glitch mb-2 text-black dark:text-white">Siva Kumar</h1>
-                <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-4 flex items-center gap-2">
+                <p className="text-sm text-black dark:text-neutral-400 mb-4 flex items-center gap-2">
                   Engineer
                   <span className="w-2 h-2 rounded-full bg-black dark:bg-white animate-pulse"></span>
                   Developer
@@ -206,6 +246,39 @@ const Connector = () => {
           <h1 className="text-2xl font-lato font-semibold mb-6">Projects</h1>
 
           <div className="space-y-6">
+            {/* Project: Dynamic Portfolio Builder (whoami-core) */}
+            <div className="scroll-fade-in group bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded overflow-hidden hover:border-neutral-400 dark:hover:border-neutral-600 transition-all relative">
+              {/* Corner Accents - Permanent */}
+              <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-neutral-400 dark:border-neutral-500"></div>
+              <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-neutral-400 dark:border-neutral-500"></div>
+              <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-neutral-400 dark:border-neutral-500"></div>
+              <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-neutral-400 dark:border-neutral-500"></div>
+              <div className="flex flex-col md:flex-row">
+                <div className="md:w-2/5 overflow-hidden bg-neutral-100 dark:bg-neutral-800">
+                  <img src={whoamiBanner} alt="whoami" className="w-full h-full object-cover" />
+                </div>
+                <div className="md:w-3/5 p-6 flex flex-col">
+                  <div className="flex items-start justify-between mb-3">
+                    <h2 className="text-xl font-bold text-black dark:text-white">whoami</h2>
+                    <div className="flex gap-2">
+                      {/* No Live Link Found yet, omitting */}
+                      <a href="https://github.com/sivakumar232/whoami-core" target="_blank" rel="noopener noreferrer" className="p-1.5 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded transition-colors" title="GitHub">
+                        <BsGithub className="text-base text-neutral-600 dark:text-neutral-400" />
+                      </a>
+                    </div>
+                  </div>
+                  <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-4">
+                    A multi-user portfolio platform featuring Clerk authentication, dynamic username routing, and ownership detection. Built for scalability.
+                  </p>
+                  <div className="flex flex-wrap gap-2 mt-auto">
+                    <span className="px-3 py-1 text-xs bg-neutral-100 dark:bg-neutral-800 rounded-full">Next.js 16</span>
+                    <span className="px-3 py-1 text-xs bg-neutral-100 dark:bg-neutral-800 rounded-full">Clerk</span>
+                    <span className="px-3 py-1 text-xs bg-neutral-100 dark:bg-neutral-800 rounded-full">Prisma</span>
+                    <span className="px-3 py-1 text-xs bg-neutral-100 dark:bg-neutral-800 rounded-full">PostgreSQL</span>
+                  </div>
+                </div>
+              </div>
+            </div>
             {/* Project 1: Bushido Quotes */}
             <div className="scroll-fade-in group bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded overflow-hidden hover:border-neutral-400 dark:hover:border-neutral-600 transition-all relative">
               {/* Corner Accents - Permanent */}
@@ -215,7 +288,7 @@ const Connector = () => {
               <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-neutral-400 dark:border-neutral-500"></div>
               <div className="flex flex-col md:flex-row">
                 <div className="md:w-2/5 overflow-hidden bg-neutral-100 dark:bg-neutral-800">
-                  <img src={Image1} alt="Bushido Quotes" className="w-full h-full object-cover" />
+                  <img src={bushidoBanner} alt="Bushido Quotes" className="w-full h-full object-cover" />
                 </div>
                 <div className="md:w-3/5 p-6 flex flex-col">
                   <div className="flex items-start justify-between mb-3">
@@ -439,16 +512,16 @@ const Connector = () => {
                 <FaGithub className="text-xl text-black dark:text-white" />
               </a>
               <a
-                href="https://twitter.com/yourusername"
+                href="https://leetcode.com/u/sivakumarrrrrr2005"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors"
-                aria-label="Twitter"
+                aria-label="LeetCode"
               >
-                <FaXTwitter className="text-xl text-black dark:text-white" />
+                <SiLeetcode className="text-xl text-black dark:text-white" />
               </a>
               <a
-                href="https://linkedin.com/in/yourusername"
+                href="https://www.linkedin.com/in/sivakumarvemuri"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors"
