@@ -165,14 +165,14 @@ const Connector = () => {
         )}
       </button>
 
-      <div className="px-4 py-8 space-y-8" style={{ maxWidth: '832px', margin: '0 auto' }}>
+      <div className="px-4 py-8 space-y-6" style={{ maxWidth: '832px', margin: '0 auto' }}>
         {/* About Section Group (Profile + Bio + Education) */}
         <div id="about" className="scroll-fade-in no-translate">
           {/* Profile Header Section with Overlapping Banner */}
-          <div className="relative mb-8 rounded-xl overflow-hidden">
+          <div className="relative mb-4 rounded-xl overflow-hidden">
             {/* Banner Image */}
             <div className="h-32 sm:h-48 w-full bg-neutral-200 dark:bg-neutral-800 overflow-hidden">
-              <img src={isDarkMode ? darkBannerImage : lightBannerImage} alt="Cover" className="w-full h-full object-cover" />
+              <img src={isDarkMode ? darkBannerImage : lightBannerImage} alt="Cover" className="w-full h-full object-cover" loading="eager" />
             </div>
 
             <div className="px-6 pb-6 relative">
@@ -214,7 +214,7 @@ const Connector = () => {
           </div>
 
           {/* About Section Text */}
-          <div className="text-black dark:text-white flex flex-col font-roboto-mono rounded-xl p-6 ">
+          <div className="text-black dark:text-white flex flex-col font-roboto-mono rounded-xl px-6 py-4">
             <div>
               <h1 className="text-2xl font-lato font-semibold mb-2">About Me</h1>
               <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
@@ -227,7 +227,7 @@ const Connector = () => {
           </div>
 
           {/* Education Section */}
-          <div className="text-black dark:text-white font-roboto-mono rounded-xl p-6 mb-8">
+          <div className="text-black dark:text-white font-roboto-mono rounded-xl px-6 py-4">
             <h1 className="text-2xl font-lato font-semibold mb-6">Education</h1>
             <div className="flex items-start gap-3 group">
               <div className="w-10 h-10 shrink-0 border border-neutral-200 dark:border-neutral-800 rounded-sm overflow-hidden">
@@ -249,7 +249,7 @@ const Connector = () => {
         </div>
 
         {/* Projects Section */}
-        <div id="projects" className="text-black dark:text-white rounded-xl p-6">
+        <div id="projects" className="text-black dark:text-white rounded-xl px-6 py-4">
           <h1 className="text-2xl font-lato font-semibold mb-6">Projects</h1>
 
           <div className="space-y-6">
@@ -390,7 +390,7 @@ const Connector = () => {
         </div>
 
         {/* Skills Section */}
-        <div id="skills" className="scroll-fade-in text-black dark:text-white rounded-xl p-6">
+        <div id="skills" className="scroll-fade-in text-black dark:text-white rounded-xl px-6 py-4">
           <h1 className="text-2xl font-lato font-semibold mb-6">Skills & Tools</h1>
 
           <div className="flex flex-wrap items-center gap-2">
@@ -462,7 +462,7 @@ const Connector = () => {
         </div>
 
         {/* GitHub Activity */}
-        <div id="github" className="scroll-fade-in text-black dark:text-white font-roboto-mono rounded-xl p-6">
+        <div id="github" className="scroll-fade-in text-black dark:text-white font-roboto-mono rounded-xl px-6 py-4">
           <h1 className="text-2xl font-lato font-semibold text-center sm:text-left">GitHub Activity</h1>
           <div className="mt-3 flex justify-center sm:justify-start overflow-hidden">
             <GitHubCalendar
@@ -482,7 +482,7 @@ const Connector = () => {
         </div>
 
         {/* Contact Section */}
-        <div id="contact" className="scroll-fade-in text-black dark:text-white rounded-xl p-6">
+        <div id="contact" className="scroll-fade-in text-black dark:text-white rounded-xl px-6 py-4">
           <h1 className="text-2xl font-lato font-semibold mb-6">Let's Connect</h1>
 
           <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed mb-6">
