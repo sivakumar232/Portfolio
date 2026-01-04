@@ -1,14 +1,14 @@
 import React from 'react';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaReact, FaNodeJs } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
-import { SiLeetcode } from 'react-icons/si';
+import { SiLeetcode, SiNextdotjs, SiTypescript, SiSupabase } from 'react-icons/si';
 import mobImage from '../assets/mob.jpg';
 import darkBannerImage from '../assets/forest_banner.jpg';
 import lightBannerImage from '../assets/light_banner.jpg';
 
 const Banner = ({ isDarkMode }) => {
     return (
-        <div className="relative mb-4 rounded-xl overflow-hidden">
+        <div className="relative mb-2 rounded-xl overflow-hidden">
             {/* Banner Image */}
             <div className="h-32 sm:h-48 w-full bg-neutral-200 dark:bg-neutral-800 overflow-hidden">
                 <img
@@ -45,9 +45,48 @@ const Banner = ({ isDarkMode }) => {
 
                 {/* Profile Info */}
                 <div>
-                    <h1 className="text-4xl font-lato font-bold mb-2 text-black dark:text-white">
+                    <h1 className="text-4xl font-hanken font-bold mb-4 text-black dark:text-white">
                         Hi, I'm SivaKumar
                     </h1>
+
+                    {/* Tech Stack Description */}
+                    <div className="space-y-4">
+                        <div>
+                            <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-3 font-hanken">
+                                I build production ready applications using
+                            </p>
+                            <div className="flex flex-wrap items-center gap-2">
+                                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold font-hanken transition-all hover:shadow-md hover:-translate-y-0.5 cursor-pointer">
+                                    <FaReact className="text-[#61DAFB] text-base" />
+                                    <span className="text-black dark:text-white">React</span>
+                                </div>
+                                <span className="text-neutral-500 dark:text-neutral-500">,</span>
+                                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold font-hanken transition-all hover:shadow-md hover:-translate-y-0.5 cursor-pointer">
+                                    <SiNextdotjs className="text-black dark:text-white text-base" />
+                                    <span className="text-black dark:text-white">Next.js</span>
+                                </div>
+                                <span className="text-neutral-500 dark:text-neutral-500">,</span>
+                                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold font-hanken transition-all hover:shadow-md hover:-translate-y-0.5 cursor-pointer">
+                                    <SiTypescript className="text-[#3178C6] text-base" />
+                                    <span className="text-black dark:text-white">TypeScript</span>
+                                </div>
+                                <span className="text-neutral-500 dark:text-neutral-500">,</span>
+                                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold font-hanken transition-all hover:shadow-md hover:-translate-y-0.5 cursor-pointer">
+                                    <FaNodeJs className="text-[#339933] text-base" />
+                                    <span className="text-black dark:text-white">Node.js</span>
+                                </div>
+                                <span className="text-neutral-500 dark:text-neutral-500">and</span>
+                                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold font-hanken transition-all hover:shadow-md hover:-translate-y-0.5 cursor-pointer">
+                                    <SiSupabase className="text-[#3ECF8E] text-base" />
+                                    <span className="text-black dark:text-white">Supabase</span>
+                                </div>
+                                <span className="text-neutral-500 dark:text-neutral-500">.</span>
+                            </div>
+                        </div>
+                        <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed font-hanken">
+                            Passionate about solving real world problems.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

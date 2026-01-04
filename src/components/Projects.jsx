@@ -9,7 +9,8 @@ import bushidoBanner from '../assets/bushido_full.png';
 const Projects = () => {
   return (
     <div id="projects" className="text-black dark:text-white rounded-xl px-6 py-4">
-      <h1 className="text-2xl font-lato font-semibold mb-6">Projects</h1>
+      <h1 className="text-sm font-hanken font-semibold text-neutral-400 ">Featured</h1>
+      <h1 className="text-2xl font-hanken font-semibold mb-6">Projects</h1>
 
       <div className="space-y-6">
         {/* Project: Dynamic Portfolio Builder (whoami-core) */}
