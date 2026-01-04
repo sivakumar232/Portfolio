@@ -38,19 +38,25 @@ const BottomNav = () => {
                 {/* Home */}
                 <a
                     href="#"
-                    className="flex items-center justify-center w-10 h-10 rounded-full text-black dark:text-white hover:bg-black/10 dark:hover:bg-white/10 hover:scale-110 transition-all duration-200"
+                    className="relative flex items-center justify-center w-10 h-10 rounded-full text-black dark:text-white hover:bg-black/10 dark:hover:bg-white/10 hover:scale-110 transition-all duration-200 group"
                     aria-label="Home"
                 >
                     <FaHome className="text-xl" />
+                    <span className="absolute -top-10 left-1/2 -translate-x-1/2 px-2 py-1 bg-black dark:bg-white text-white dark:text-black text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
+                        Home
+                    </span>
                 </a>
 
                 {/* Blog */}
                 <a
                     href="#blog"
-                    className="flex items-center justify-center w-10 h-10 rounded-full text-black dark:text-white hover:bg-black/10 dark:hover:bg-white/10 hover:scale-110 transition-all duration-200"
+                    className="relative flex items-center justify-center w-10 h-10 rounded-full text-black dark:text-white hover:bg-black/10 dark:hover:bg-white/10 hover:scale-110 transition-all duration-200 group"
                     aria-label="Blog"
                 >
                     <BookOpen className="w-5 h-5" />
+                    <span className="absolute -top-10 left-1/2 -translate-x-1/2 px-2 py-1 bg-black dark:bg-white text-white dark:text-black text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
+                        Blog
+                    </span>
                 </a>
 
                 {/* Separator */}
@@ -61,30 +67,39 @@ const BottomNav = () => {
                     href="https://github.com/sivakumar232"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-black dark:text-white hover:scale-110 transition-transform duration-200"
+                    className="relative text-black dark:text-white hover:scale-110 transition-transform duration-200 group"
                     aria-label="GitHub"
                 >
                     <FaGithub className="text-xl" />
+                    <span className="absolute -top-10 left-1/2 -translate-x-1/2 px-2 py-1 bg-black dark:bg-white text-white dark:text-black text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
+                        GitHub
+                    </span>
                 </a>
 
                 <a
                     href="https://twitter.com/sivakumarr3105"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-black dark:text-white hover:scale-110 transition-transform duration-200"
+                    className="relative text-black dark:text-white hover:scale-110 transition-transform duration-200 group"
                     aria-label="Twitter"
                 >
                     <FaXTwitter className="text-xl" />
+                    <span className="absolute -top-10 left-1/2 -translate-x-1/2 px-2 py-1 bg-black dark:bg-white text-white dark:text-black text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
+                        Twitter / X
+                    </span>
                 </a>
 
                 <a
                     href="https://linkedin.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-black dark:text-white hover:scale-110 transition-transform duration-200"
+                    className="relative text-black dark:text-white hover:scale-110 transition-transform duration-200 group"
                     aria-label="LinkedIn"
                 >
                     <FaLinkedin className="text-xl" />
+                    <span className="absolute -top-10 left-1/2 -translate-x-1/2 px-2 py-1 bg-black dark:bg-white text-white dark:text-black text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
+                        LinkedIn
+                    </span>
                 </a>
 
                 {/* Separator */}

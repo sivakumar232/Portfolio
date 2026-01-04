@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/sivakumar232/Portfolio#readme",
   "dependencies": {
+    "@studio-freight/lenis": "^1.0.42",
     "@tailwindcss/vite": "^4.1.11",
     "amqplib": "^0.10.8",
     "clsx": "^2.1.1",

@@ -16,10 +16,6 @@ const Projects = () => {
         {/* Project: Dynamic Portfolio Builder (whoami-core) */}
         <div className="group bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded overflow-hidden hover:border-neutral-400 dark:hover:border-neutral-600 transition-all relative">
           {/* Corner Accents - Permanent */}
-          <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-neutral-400 dark:border-neutral-500"></div>
-          <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-neutral-400 dark:border-neutral-500"></div>
-          <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-neutral-400 dark:border-neutral-500"></div>
-          <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-neutral-400 dark:border-neutral-500"></div>
           <div className="flex flex-col md:flex-row">
             <div className="md:w-2/5 overflow-hidden bg-neutral-100 dark:bg-neutral-800">
               <img src={whoamiBanner} alt="whoami" className="w-full h-full object-cover" loading="lazy" />
@@ -49,10 +45,6 @@ const Projects = () => {
         {/* Project 1: Bushido Quotes */}
         <div className="group bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded overflow-hidden hover:border-neutral-400 dark:hover:border-neutral-600 transition-all relative">
           {/* Corner Accents - Permanent */}
-          <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-neutral-400 dark:border-neutral-500"></div>
-          <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-neutral-400 dark:border-neutral-500"></div>
-          <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-neutral-400 dark:border-neutral-500"></div>
-          <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-neutral-400 dark:border-neutral-500"></div>
           <div className="flex flex-col md:flex-row">
             <div className="md:w-2/5 overflow-hidden bg-neutral-100 dark:bg-neutral-800">
               <img src={bushidoBanner} alt="Bushido Quotes" className="w-full h-full object-cover" loading="lazy" />
@@ -84,10 +76,6 @@ const Projects = () => {
         {/* Project 2: BackdropUi */}
         <div className="group bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded overflow-hidden hover:border-neutral-400 dark:hover:border-neutral-600 transition-all relative">
           {/* Corner Accents - Permanent */}
-          <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-neutral-400 dark:border-neutral-500"></div>
-          <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-neutral-400 dark:border-neutral-500"></div>
-          <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-neutral-400 dark:border-neutral-500"></div>
-          <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-neutral-400 dark:border-neutral-500"></div>
           <div className="flex flex-col md:flex-row">
             <div className="md:w-2/5 overflow-hidden bg-neutral-100 dark:bg-neutral-800">
               <img src={Image1} alt="BackdropUi" className="w-full h-full object-cover" loading="lazy" />
@@ -118,10 +106,6 @@ const Projects = () => {
         {/* Project 3: Sync AI */}
         <div className="group bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded overflow-hidden hover:border-neutral-400 dark:hover:border-neutral-600 transition-all relative">
           {/* Corner Accents - Permanent */}
-          <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-neutral-400 dark:border-neutral-500"></div>
-          <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-neutral-400 dark:border-neutral-500"></div>
-          <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-neutral-400 dark:border-neutral-500"></div>
-          <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-neutral-400 dark:border-neutral-500"></div>
           <div className="flex flex-col md:flex-row">
             <div className="md:w-2/5 overflow-hidden bg-neutral-100 dark:bg-neutral-800">
               <img src={timetableimg} alt="Sync AI" className="w-full h-full object-cover" loading="lazy" />

@@ -50,19 +50,25 @@ const Contact = () => {
                             href="https://www.linkedin.com/in/sivakumarvemuri"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-3 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors"
+                            className="relative p-3 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors group"
                             aria-label="LinkedIn"
                         >
                             <FaLinkedin className="text-xl text-black dark:text-white" />
+                            <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-black dark:bg-white text-white dark:text-black text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
+                                LinkedIn
+                            </span>
                         </a>
                         <a
                             href="https://x.com/sivakumarr3105"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-3 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors"
+                            className="relative p-3 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors group"
                             aria-label="Twitter"
                         >
                             <FaXTwitter className="text-xl text-black dark:text-white" />
+                            <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-black dark:bg-white text-white dark:text-black text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
+                                Twitter / X
+                            </span>
                         </a>
                     </div>
                 </div>
