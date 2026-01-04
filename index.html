@@ -14,6 +14,22 @@
     rel="stylesheet">
 
   <title>Sivakumar</title>
+
+  <!-- Theme Initialization Script - Runs before page render -->
+  <script>
+    // Check localStorage for saved theme, default to dark if not found
+    const savedTheme = localStorage.getItem('theme');
+    const theme = savedTheme || 'dark';
+
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+
+    // Save default theme if not already saved
+    if (!savedTheme) {
+      localStorage.setItem('theme', 'dark');
+    }
+  </script>
 </head>
 
 <body>

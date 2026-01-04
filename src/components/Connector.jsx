@@ -11,6 +11,7 @@ import Projects from './Projects';
 import Skills from './Skills';
 import GithubActivity from './GithubActivity';
 import Contact from './Contact';
+import Quotes from './Quotes';
 
 const Connector = () => {
   const [time, setTime] = useState(new Date());
@@ -24,7 +25,7 @@ const Connector = () => {
   // Lenis Smooth Scroll
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.4,
+      duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       direction: 'vertical',
       gestureDirection: 'vertical',
@@ -81,6 +82,8 @@ const Connector = () => {
         <GithubActivity isDarkMode={isDarkMode} />
 
         <Contact />
+
+        <Quotes />
 
         {/* Footer */}
         <div className="w-full flex justify-between items-center border-t border-neutral-300 dark:border-neutral-700 py-4 text-sm">
