@@ -11,6 +11,10 @@ const GithubActivity = ({ isDarkMode }) => {
                     blockSize={11}
                     blockMargin={4}
                     fontSize={14}
+                    theme={{
+                        light: ['#ebedf0', '#9dd7f5', '#4db8e8', '#2a8fc1', '#1a5f7a'],
+                        dark: ['#161b22', '#0a4a5c', '#0d7ea8', '#14b8e8', '#5ddef4'],
+                    }}
                     colorScheme={isDarkMode ? 'dark' : 'light'}
                     style={{
                         color: isDarkMode ? '#fff' : '#000'
