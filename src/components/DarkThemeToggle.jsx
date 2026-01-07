@@ -24,9 +24,6 @@ const DarkThemeToggle = () => {
     const toggleTheme = () => {
       const newTheme = !isDarkMode;
 
-      // Add blur effect during transition
-      document.body.classList.add('theme-transitioning');
-
       // We don't rely on setIsDarkMode here to trigger the change, but to reflect it.
       // Actually, we should manipulate the DOM directly for the theme class as per Connector logic.
       if (newTheme) {
@@ -37,11 +34,6 @@ const DarkThemeToggle = () => {
         localStorage.setItem('theme', 'light');
       }
       setIsDarkMode(newTheme);
-
-      // Remove blur effect after transition
-      setTimeout(() => {
-        document.body.classList.remove('theme-transitioning');
-      }, 400);
     };
 
     if (!document.startViewTransition) {

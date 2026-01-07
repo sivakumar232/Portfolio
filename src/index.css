@@ -1,40 +1,6 @@
 @import "tailwindcss";
 @variant dark (&:where(.dark, .dark *));
 
-/* Page Load Blur Animation */
-@keyframes fadeInBlur {
-  0% {
-    opacity: 0;
-    filter: blur(8px);
-  }
-
-  100% {
-    opacity: 1;
-    filter: blur(0);
-  }
-}
-
-body {
-  animation: fadeInBlur 0.5s ease-out;
-}
-
-/* Theme Toggle Blur Animation */
-.theme-transitioning {
-  animation: blurTransition 0.4s ease-in-out;
-}
-
-@keyframes blurTransition {
-
-  0%,
-  100% {
-    filter: blur(0);
-  }
-
-  50% {
-    filter: blur(5px);
-  }
-}
-
 /* Quote Fade In Animation */
 @keyframes fadeIn {
   from {
