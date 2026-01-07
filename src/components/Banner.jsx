@@ -8,7 +8,7 @@ import lightBannerImage from '../assets/light_banner.jpg';
 
 const Banner = ({ isDarkMode }) => {
     return (
-        <div className="relative mb-2 rounded-xl overflow-hidden">
+        <div className="relative  rounded-xl overflow-hidden">
             {/* Banner Image */}
             <div className="h-32 sm:h-48 w-full bg-neutral-200 dark:bg-neutral-800 overflow-hidden">
                 <img
@@ -78,39 +78,9 @@ const Banner = ({ isDarkMode }) => {
 
                 {/* Profile Info */}
                 <div>
-                    <h1 className="text-4xl font-hanken font-bold mb-4 text-black dark:text-white">
+                    <h1 className="text-4xl font-hanken font-bold mb-0 text-black dark:text-white">
                         Hi, I'm Siva Kumar
                     </h1>
-
-                    {/* Tech Stack Description */}
-                    <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed font-hanken">
-                        I build production-ready applications using{' '}
-                        <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5 cursor-pointer">
-                            <FaReact className="text-[#61DAFB] text-base" />
-                            <span className="text-black dark:text-white">React</span>
-                        </span>
-                        ,{' '}
-                        <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5 cursor-pointer">
-                            <SiNextdotjs className="text-black dark:text-white text-base" />
-                            <span className="text-black dark:text-white">Next.js</span>
-                        </span>
-                        ,{' '}
-                        <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5 cursor-pointer">
-                            <SiTypescript className="text-[#3178C6] text-base" />
-                            <span className="text-black dark:text-white">TypeScript</span>
-                        </span>
-                        ,{' '}
-                        <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5 cursor-pointer">
-                            <FaNodeJs className="text-[#339933] text-base" />
-                            <span className="text-black dark:text-white">Node.js</span>
-                        </span>
-                        {' '}and{' '}
-                        <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-dashed border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-sm text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5 cursor-pointer">
-                            <SiSupabase className="text-[#3ECF8E] text-base" />
-                            <span className="text-black dark:text-white">Supabase</span>
-                        </span>
-                        . With a focus on clean architecture and scalable solutions, I'm passionate about solving real world problems through innovative web technologies.
-                    </p>
                 </div>
             </div>
         </div>
